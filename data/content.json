@@ -1,0 +1,938 @@
+[
+  {
+    "id": "languages",
+    "title": "Languages",
+    "topics": [
+      {
+        "id": "javascript",
+        "title": "JavaScript",
+        "lessons": [
+          {
+            "id": "variables",
+            "title": "Variables",
+            "summary": "Variables store information your program can use later. Think of them like labeled boxes — you give the box a name and put something inside.\n\nThere are three ways to create variables:\n- `const` — the value never changes (use this by default)\n- `let` — the value can change\n- `var` — old way, avoid it\n\nWhen to use what:\nUse `const` for everything by default. Switch to `let` only when you know the value will change, like a counter or a loop variable.",
+            "example": "const name = \"Daniel\"   // never changes\nlet score = 0           // can change\nscore = 10              // allowed with let\n\nconst age = 20\n// age = 21  // ERROR — const cannot be reassigned"
+          },
+          {
+            "id": "functions",
+            "title": "Functions",
+            "summary": "Functions are reusable blocks of code. Instead of writing the same code over and over, you write it once inside a function and call it whenever you need it.\n\nThink of a function like a recipe — you write the steps once, then follow the recipe whenever you want to cook that dish.\n\nKey concepts:\n- Parameters are the inputs a function accepts\n- Return sends a value back to whoever called the function\n- Arrow functions are the modern preferred way to write functions",
+            "example": "// Regular function\nfunction greet(name) {\n  return \"Hello, \" + name + \"!\"\n}\n\n// Arrow function (modern, shorter)\nconst greet = (name) => \"Hello, \" + name + \"!\"\n\ngreet(\"Daniel\") // \"Hello, Daniel!\""
+          },
+          {
+            "id": "array-methods",
+            "title": "Array Methods (map, filter, reduce)",
+            "summary": "Array methods let you work with lists of data in a clean and powerful way. The three most important ones are map, filter, and reduce.\n\nThink of arrays like a list of items, and these methods as tools to work with that list.",
+            "example": "const numbers = [1, 2, 3, 4, 5]\n\n// map — transform every item\nnumbers.map(n => n * 2)         // [2, 4, 6, 8, 10]\n\n// filter — keep only matching items\nnumbers.filter(n => n > 2)      // [3, 4, 5]\n\n// reduce — combine into one value\nnumbers.reduce((a, b) => a + b) // 15\n\n// find — get first matching item\nnumbers.find(n => n > 3)        // 4\n\n// some — does any item match?\nnumbers.some(n => n > 4)        // true\n\n// every — do all items match?\nnumbers.every(n => n > 0)       // true"
+          },
+          {
+            "id": "async-await",
+            "title": "Async/Await",
+            "summary": "JavaScript is single-threaded — it does one thing at a time. But some things take time, like fetching data from an API. Async/await lets you wait for those things without freezing the whole program.\n\nThink of it like ordering food at a restaurant. You place the order (start the request), do other things while waiting, and when it arrives (data comes back) you eat (use the data).\n\nKey concepts:\n- `async` makes a function asynchronous\n- `await` pauses until the promise resolves\n- Always wrap in try/catch to handle errors",
+            "example": "async function getUser() {\n  try {\n    const response = await fetch('https://api.example.com/user')\n    const data = await response.json()\n    console.log(data)\n  } catch (error) {\n    console.log(\"Something went wrong:\", error)\n  }\n}"
+          },
+          {
+            "id": "objects",
+            "title": "Objects",
+            "summary": "Objects store related data together using key-value pairs. Think of an object like a profile card — it holds multiple pieces of information about one thing.",
+            "example": "const user = {\n  name: \"Daniel\",\n  age: 20,\n  role: \"developer\",\n  isActive: true\n}\n\n// Access values\nuser.name        // \"Daniel\"\nuser[\"age\"]      // 20\n\n// Update values\nuser.age = 21\n\n// Add new property\nuser.city = \"Dallas\"\n\n// Destructure\nconst { name, role } = user\nconsole.log(name) // \"Daniel\""
+          },
+          {
+            "id": "destructuring",
+            "title": "Destructuring",
+            "summary": "Destructuring lets you pull values out of arrays and objects quickly, without writing multiple lines of code.\n\nThink of it like unpacking a suitcase — instead of taking out each item one by one, you unpack everything at once.",
+            "example": "// Object destructuring\nconst user = { name: \"Daniel\", age: 20, city: \"Dallas\" }\nconst { name, age } = user\nconsole.log(name) // \"Daniel\"\n\n// Array destructuring\nconst colors = [\"red\", \"green\", \"blue\"]\nconst [first, second] = colors\nconsole.log(first) // \"red\"\n\n// With default values\nconst { role = \"user\" } = user\nconsole.log(role) // \"user\" (default since not in object)"
+          },
+          {
+            "id": "template-literals",
+            "title": "Template Literals",
+            "summary": "Template literals let you embed variables directly inside strings. Instead of using + to combine strings, you use backticks and ${} to insert values cleanly.",
+            "example": "const name = \"Daniel\"\nconst age = 20\n\n// Old way (messy)\n\"Hello, \" + name + \"! You are \" + age + \" years old.\"\n\n// Template literal (clean)\n`Hello, ${name}! You are ${age} years old.`\n\n// Multi-line strings\nconst message = `\n  Welcome back, ${name}.\n  Your account is active.\n`"
+          },
+          {
+            "id": "error-handling",
+            "title": "Error Handling (try/catch)",
+            "summary": "Things go wrong in code — APIs fail, data is missing, users enter bad input. Error handling lets you catch those problems and respond gracefully instead of crashing.\n\nKey concepts:\n- `try` — run the risky code\n- `catch` — handle the error if something goes wrong\n- `finally` — always runs, whether success or failure",
+            "example": "try {\n  const response = await fetch('/api/data')\n  if (!response.ok) {\n    throw new Error(\"Request failed\")\n  }\n  const data = await response.json()\n  console.log(data)\n} catch (error) {\n  console.log(\"Error:\", error.message)\n} finally {\n  console.log(\"This always runs\")\n}"
+          }
+        ]
+      },
+      {
+        "id": "typescript",
+        "title": "TypeScript",
+        "lessons": [
+          {
+            "id": "basic-types",
+            "title": "Basic Types (string, number, boolean)",
+            "summary": "TypeScript adds types to JavaScript. Types tell the computer what kind of data a variable holds, catching mistakes before your code runs.\n\nThink of types like labels on containers — \"this box holds numbers\" prevents you from accidentally putting text in it.",
+            "example": "const name: string = \"Daniel\"\nconst age: number = 20\nconst isActive: boolean = true\nconst scores: number[] = [95, 87, 92]\n\n// Function with types\nfunction greet(name: string): string {\n  return `Hello, ${name}!`\n}\n\n// Avoid \"any\" — it turns off TypeScript's help\nconst bad: any = \"don't do this\""
+          },
+          {
+            "id": "interfaces",
+            "title": "Interfaces",
+            "summary": "Interfaces define the shape of an object — what properties it must have and what types they should be. They're like a contract your data must follow.",
+            "example": "interface User {\n  name: string\n  age: number\n  email: string\n  isAdmin?: boolean  // ? means optional\n}\n\nconst user: User = {\n  name: \"Daniel\",\n  age: 20,\n  email: \"daniel@example.com\"\n  // isAdmin is optional, so we can skip it\n}\n\nfunction displayUser(user: User): void {\n  console.log(`${user.name} — ${user.email}`)\n}"
+          },
+          {
+            "id": "type-aliases",
+            "title": "Type Aliases",
+            "summary": "Type aliases create a custom name for a type. Similar to interfaces but more flexible — you can use them for primitives, unions, and more.",
+            "example": "// Simple alias\ntype ID = string | number\n\n// Object type\ntype Point = {\n  x: number\n  y: number\n}\n\n// Union type\ntype Status = \"active\" | \"inactive\" | \"pending\"\n\nconst userStatus: Status = \"active\"\n// const bad: Status = \"unknown\" // ERROR"
+          },
+          {
+            "id": "generics",
+            "title": "Generics",
+            "summary": "Generics let you write reusable code that works with different types. Instead of writing the same function for strings and for numbers, you write it once with a generic type.\n\nThink of generics like a template — fill in the type when you use it.",
+            "example": "// Without generics — only works with numbers\nfunction getFirst(arr: number[]): number {\n  return arr[0]\n}\n\n// With generics — works with any type\nfunction getFirst<T>(arr: T[]): T {\n  return arr[0]\n}\n\ngetFirst<number>([1, 2, 3])    // 1\ngetFirst<string>([\"a\", \"b\"])   // \"a\""
+          },
+          {
+            "id": "union-types",
+            "title": "Union Types",
+            "summary": "Union types let a variable hold more than one type. Use the | symbol to say \"this can be A or B.\"",
+            "example": "// Can be string or number\nlet id: string | number\nid = \"abc123\"  // OK\nid = 42        // OK\n\n// Function that accepts multiple types\nfunction display(value: string | number): void {\n  console.log(value.toString())\n}\n\n// Type guard — check which type it is\nfunction process(value: string | number) {\n  if (typeof value === \"string\") {\n    console.log(value.toUpperCase())\n  } else {\n    console.log(value * 2)\n  }\n}"
+          },
+          {
+            "id": "utility-types",
+            "title": "Utility Types (Partial, Omit, Record)",
+            "summary": "Utility types are built-in TypeScript helpers that transform existing types. They save you from rewriting types by hand.",
+            "example": "interface User {\n  name: string\n  age: number\n  email: string\n  role: string\n}\n\n// Partial — makes all properties optional\ntype PartialUser = Partial<User>\n\n// Omit — removes specific properties\ntype PublicUser = Omit<User, \"email\" | \"role\">\n\n// Pick — keeps only specific properties\ntype UserPreview = Pick<User, \"name\" | \"age\">\n\n// Record — creates an object type with specific keys\ntype UserMap = Record<string, User>"
+          }
+        ]
+      },
+      {
+        "id": "html-css",
+        "title": "HTML & CSS",
+        "lessons": [
+          {
+            "id": "semantic-html",
+            "title": "Semantic HTML",
+            "summary": "Semantic HTML uses tags that describe what they contain. Instead of using `<div>` for everything, you use meaningful tags that tell browsers and screen readers what each section is.\n\nThis improves accessibility, SEO, and makes your code easier to read.",
+            "example": "```html\n<!-- Non-semantic (bad) -->\n<div class=\"header\">\n  <div class=\"nav\">...</div>\n</div>\n\n<!-- Semantic (good) -->\n<header>\n  <nav>\n    <a href=\"/\">Home</a>\n    <a href=\"/about\">About</a>\n  </nav>\n</header>\n<main>\n  <section>\n    <article>...</article>\n  </section>\n</main>\n<footer>...</footer>\n```\n\n**Common semantic tags:**\n- `header` — top of page or section\n- `nav` — navigation links\n- `main` — main content\n- `section` — grouped content\n- `article` — standalone content\n- `footer` — bottom of page"
+          },
+          {
+            "id": "flexbox",
+            "title": "Flexbox",
+            "summary": "Flexbox makes it easy to lay out elements in a row or column. The parent becomes a flex container and controls how children are arranged.\n\nThink of it like a shelf — you decide if items go left-to-right or top-to-bottom, how spaced out they are, and how they align.",
+            "example": ".container {\n  display: flex;\n  flex-direction: row;        /* row or column */\n  justify-content: center;    /* horizontal alignment */\n  align-items: center;        /* vertical alignment */\n  gap: 16px;                  /* space between items */\n  flex-wrap: wrap;            /* wrap to next line */\n}\n\n.item {\n  flex: 1;  /* each item takes equal space */\n}"
+          },
+          {
+            "id": "css-grid",
+            "title": "CSS Grid",
+            "summary": "CSS Grid is for two-dimensional layouts — rows AND columns at the same time. Perfect for page layouts, dashboards, and card grids.\n\nFlexbox is one direction. Grid is both directions.",
+            "example": ".container {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);  /* 3 equal columns */\n  grid-template-rows: auto;\n  gap: 24px;\n}\n\n/* Span across columns */\n.featured {\n  grid-column: span 2;\n}"
+          },
+          {
+            "id": "responsive-design",
+            "title": "Responsive Design",
+            "summary": "Responsive design makes your website look good on all screen sizes — phone, tablet, and desktop. You use media queries to apply different styles at different screen widths.",
+            "example": "/* Mobile first — default styles */\n.container {\n  flex-direction: column;\n  padding: 16px;\n}\n\n/* Tablet and up */\n@media (min-width: 768px) {\n  .container {\n    flex-direction: row;\n    padding: 32px;\n  }\n}\n\n/* Desktop and up */\n@media (min-width: 1024px) {\n  .container {\n    max-width: 1200px;\n    margin: 0 auto;\n  }\n}"
+          },
+          {
+            "id": "css-variables",
+            "title": "CSS Variables"
+          },
+          {
+            "id": "selectors-specificity",
+            "title": "Selectors and Specificity"
+          }
+        ]
+      },
+      {
+        "id": "python",
+        "title": "Python",
+        "lessons": [
+          {
+            "id": "variables-data-types",
+            "title": "Variables and Data Types",
+            "summary": "Python variables don't need a type declaration — Python figures it out automatically. This is called dynamic typing.",
+            "example": "name = \"Daniel\"        # string\nage = 20               # integer\nheight = 5.11          # float\nis_active = True       # boolean\nskills = [\"JS\", \"Python\"]  # list\nuser = {\"name\": \"Daniel\"}  # dictionary\n\n# f-strings (like template literals)\nprint(f\"Hello, {name}! You are {age} years old.\")"
+          },
+          {
+            "id": "functions",
+            "title": "Functions",
+            "summary": "Functions in Python use the `def` keyword and indentation instead of curly braces.",
+            "example": "def greet(name):\n    return f\"Hello, {name}!\"\n\n# With default parameter\ndef greet(name=\"stranger\"):\n    return f\"Hello, {name}!\"\n\ngreet(\"Daniel\")   # \"Hello, Daniel!\"\ngreet()           # \"Hello, stranger!\"\n\n# Lambda (like arrow functions)\ndouble = lambda x: x * 2\ndouble(5)  # 10"
+          },
+          {
+            "id": "loops",
+            "title": "Loops",
+            "summary": "Python loops are clean and readable. The `for` loop works great with lists and ranges.",
+            "example": "# For loop\nfor i in range(5):\n    print(i)  # 0, 1, 2, 3, 4\n\n# Loop through a list\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfor fruit in fruits:\n    print(fruit)\n\n# While loop\ncount = 0\nwhile count < 5:\n    print(count)\n    count += 1\n\n# List comprehension (powerful shortcut)\nsquares = [x ** 2 for x in range(10)]"
+          },
+          {
+            "id": "conditionals",
+            "title": "Conditionals",
+            "summary": "Python uses `if`, `elif`, and `else`. Indentation is how Python knows what's inside each block — no curly braces needed.",
+            "example": "age = 20\n\nif age < 13:\n    print(\"Child\")\nelif age < 18:\n    print(\"Teenager\")\nelif age < 65:\n    print(\"Adult\")\nelse:\n    print(\"Senior\")\n\n# Ternary (one-liner)\nstatus = \"adult\" if age >= 18 else \"minor\""
+          },
+          {
+            "id": "lists-dictionaries",
+            "title": "Lists and Dictionaries",
+            "summary": "Lists are ordered collections. Dictionaries store key-value pairs. These are Python's most used data structures.",
+            "example": "# List\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfruits.append(\"mango\")\nfruits.remove(\"apple\")\nfruits[0]  # \"banana\"\n\n# Dictionary\nuser = {\n    \"name\": \"Daniel\",\n    \"age\": 20,\n    \"skills\": [\"Python\", \"JavaScript\"]\n}\nuser[\"name\"]          # \"Daniel\"\nuser[\"city\"] = \"Dallas\"  # add new key\nuser.get(\"email\", \"N/A\") # safe access with default"
+          },
+          {
+            "id": "file-io",
+            "title": "File I/O"
+          },
+          {
+            "id": "exception-handling",
+            "title": "Exception Handling"
+          }
+        ]
+      },
+      {
+        "id": "sql",
+        "title": "SQL",
+        "lessons": [
+          {
+            "id": "select-queries",
+            "title": "SELECT queries",
+            "summary": "SELECT is how you read data from a database. It's the most used SQL command — you'll write it constantly.",
+            "example": "-- Get all columns\nSELECT * FROM users;\n\n-- Get specific columns\nSELECT name, email FROM users;\n\n-- With a condition\nSELECT * FROM users WHERE age > 18;\n\n-- Sort results\nSELECT * FROM users ORDER BY name ASC;\n\n-- Limit results\nSELECT * FROM users LIMIT 10;\n\n-- Combined\nSELECT name, age FROM users\nWHERE age > 18\nORDER BY age DESC\nLIMIT 5;"
+          },
+          {
+            "id": "where-filtering",
+            "title": "WHERE and filtering"
+          },
+          {
+            "id": "joins",
+            "title": "JOINs",
+            "summary": "JOINs combine data from multiple tables. The most common is INNER JOIN — it returns rows where there's a match in both tables.",
+            "example": "-- Tables: users and orders\n-- Each order has a user_id\n\n-- INNER JOIN — only matching rows\nSELECT users.name, orders.total\nFROM users\nINNER JOIN orders ON users.id = orders.user_id;\n\n-- LEFT JOIN — all users, even without orders\nSELECT users.name, orders.total\nFROM users\nLEFT JOIN orders ON users.id = orders.user_id;"
+          },
+          {
+            "id": "insert-update-delete",
+            "title": "INSERT, UPDATE, DELETE",
+            "summary": "These are the write operations in SQL — creating, changing, and removing data.",
+            "example": "-- INSERT — add new row\nINSERT INTO users (name, email, age)\nVALUES ('Daniel', 'daniel@example.com', 20);\n\n-- UPDATE — change existing row\nUPDATE users\nSET age = 21\nWHERE id = 1;\n\n-- DELETE — remove row\nDELETE FROM users\nWHERE id = 1;\n\n-- CAREFUL — DELETE without WHERE deletes everything!"
+          },
+          {
+            "id": "aggregate-functions",
+            "title": "Aggregate functions (COUNT, SUM, AVG)"
+          },
+          {
+            "id": "indexes",
+            "title": "Indexes"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "frameworks",
+    "title": "Frameworks",
+    "topics": [
+      {
+        "id": "react",
+        "title": "React",
+        "lessons": [
+          {
+            "id": "components",
+            "title": "Components",
+            "summary": "Components are the building blocks of React. Every piece of UI is a component — a button, a card, a nav bar. They're just functions that return JSX.\n\nBuild small components and combine them into bigger ones. Like LEGO blocks.",
+            "example": "// Simple component\nfunction Button({ label, onClick }: { label: string, onClick: () => void }) {\n  return (\n    <button\n      onClick={onClick}\n      className=\"bg-blue-500 text-white px-4 py-2 rounded\"\n    >\n      {label}\n    </button>\n  )\n}\n\n// Use it\n<Button label=\"Click me\" onClick={() => alert(\"Clicked!\")} />"
+          },
+          {
+            "id": "props",
+            "title": "Props"
+          },
+          {
+            "id": "usestate",
+            "title": "useState",
+            "summary": "useState lets your component remember and update data. When state changes, React automatically re-renders the component to show the new data.",
+            "example": "import { useState } from 'react'\n\nfunction Counter() {\n  const [count, setCount] = useState(0)\n\n  return (\n    <div>\n      <p>Count: {count}</p>\n      <button onClick={() => setCount(count + 1)}>+</button>\n      <button onClick={() => setCount(count - 1)}>-</button>\n      <button onClick={() => setCount(0)}>Reset</button>\n    </div>\n  )\n}"
+          },
+          {
+            "id": "useeffect",
+            "title": "useEffect",
+            "summary": "useEffect runs code after the component renders. Use it for fetching data, setting up subscriptions, or anything that needs to happen after the UI appears.",
+            "example": "import { useState, useEffect } from 'react'\n\nfunction UserProfile({ userId }: { userId: number }) {\n  const [user, setUser] = useState(null)\n\n  useEffect(() => {\n    // Runs after component renders\n    fetch(`/api/users/${userId}`)\n      .then(res => res.json())\n      .then(data => setUser(data))\n  }, [userId])  // re-runs when userId changes\n\n  if (!user) return <p>Loading...</p>\n  return <p>{user.name}</p>\n}"
+          },
+          {
+            "id": "event-handlers",
+            "title": "Event Handlers"
+          },
+          {
+            "id": "conditional-rendering",
+            "title": "Conditional Rendering"
+          },
+          {
+            "id": "lists-and-keys",
+            "title": "Lists and Keys"
+          },
+          {
+            "id": "fetching-data",
+            "title": "Fetching Data"
+          }
+        ]
+      },
+      {
+        "id": "nextjs",
+        "title": "Next.js",
+        "lessons": [
+          {
+            "id": "file-based-routing",
+            "title": "File-Based Routing",
+            "summary": "In Next.js you don't set up a router manually. Just create a file and it becomes a page automatically. The file name and folder structure define the URL.",
+            "example": "app/\n  page.tsx              →  /\n  about/\n    page.tsx            →  /about\n  blog/\n    page.tsx            →  /blog\n    [id]/\n      page.tsx          →  /blog/123\n  api/\n    users/\n      route.ts          →  /api/users"
+          },
+          {
+            "id": "app-router",
+            "title": "App Router"
+          },
+          {
+            "id": "server-vs-client",
+            "title": "Server vs Client Components",
+            "summary": "Next.js has two types of components. Server components run on the server and are faster — use them by default. Client components run in the browser and are needed for interactivity.",
+            "example": "```tsx\n// Server component (default — no \"use client\")\nasync function UserList() {\n  const users = await fetch('/api/users').then(r => r.json())\n  return <ul>{users.map(u => <li key={u.id}>{u.name}</li>)}</ul>\n}\n\n// Client component (needs \"use client\" at top)\n\"use client\"\nimport { useState } from 'react'\n\nfunction Counter() {\n  const [count, setCount] = useState(0)\n  return <button onClick={() => setCount(count + 1)}>{count}</button>\n}\n```\n\n**Rule of thumb:**\n- Fetching data → Server component\n- useState, onClick, browser APIs → Client component"
+          },
+          {
+            "id": "api-routes",
+            "title": "API Routes"
+          },
+          {
+            "id": "dynamic-routes",
+            "title": "Dynamic Routes"
+          },
+          {
+            "id": "image-optimization",
+            "title": "Image Optimization"
+          },
+          {
+            "id": "deploy-vercel",
+            "title": "Deployment to Vercel"
+          }
+        ]
+      },
+      {
+        "id": "nodejs",
+        "title": "Node.js",
+        "lessons": [
+          {
+            "id": "what-is-nodejs",
+            "title": "What is Node.js",
+            "summary": "Node.js lets you run JavaScript on the server — outside of the browser. Before Node.js, JavaScript only worked in browsers. Now you can use the same language for frontend and backend.",
+            "example": "// Run a JavaScript file from terminal\n// node index.js\n\nconsole.log(\"Hello from Node.js!\")\n\n// Access built-in modules\nconst os = require('os')\nconsole.log(os.platform())  // your operating system\n\nconst path = require('path')\nconsole.log(path.join(__dirname, 'files'))"
+          },
+          {
+            "id": "http-module",
+            "title": "HTTP Module",
+            "summary": "Node.js has a built-in HTTP module for creating servers. This is what Express builds on top of.",
+            "example": "const http = require('http')\n\nconst server = http.createServer((req, res) => {\n  if (req.url === '/') {\n    res.writeHead(200, { 'Content-Type': 'application/json' })\n    res.end(JSON.stringify({ message: 'Hello!' }))\n  } else {\n    res.writeHead(404)\n    res.end('Not found')\n  }\n})\n\nserver.listen(3000, () => {\n  console.log('Server running on port 3000')\n})"
+          },
+          {
+            "id": "npm-packages",
+            "title": "npm and packages"
+          },
+          {
+            "id": "file-system",
+            "title": "File System (fs)"
+          },
+          {
+            "id": "environment-variables",
+            "title": "Environment Variables"
+          }
+        ]
+      },
+      {
+        "id": "express",
+        "title": "Express.js",
+        "lessons": [
+          {
+            "id": "setting-up-server",
+            "title": "Setting up a server",
+            "summary": "Express makes building servers much simpler than the raw Node.js HTTP module. Less code, cleaner syntax, same result.",
+            "example": "const express = require('express')\nconst app = express()\n\napp.use(express.json())  // parse JSON bodies\n\napp.get('/', (req, res) => {\n  res.json({ message: 'Hello from Express!' })\n})\n\napp.listen(3000, () => {\n  console.log('Server running on port 3000')\n})"
+          },
+          {
+            "id": "routes",
+            "title": "Routes (GET, POST, PUT, DELETE)",
+            "summary": "Routes define how your server responds to different requests. Each route has a method (GET, POST, etc.) and a path.",
+            "example": "// GET — read data\napp.get('/users', (req, res) => {\n  res.json(users)\n})\n\n// POST — create data\napp.post('/users', (req, res) => {\n  const newUser = req.body\n  users.push(newUser)\n  res.status(201).json(newUser)\n})\n\n// PUT — update data\napp.put('/users/:id', (req, res) => {\n  const { id } = req.params\n  // find and update user\n  res.json(updatedUser)\n})\n\n// DELETE — remove data\napp.delete('/users/:id', (req, res) => {\n  // find and delete user\n  res.json({ message: 'Deleted' })\n})"
+          },
+          {
+            "id": "middleware",
+            "title": "Middleware"
+          },
+          {
+            "id": "cors",
+            "title": "CORS"
+          },
+          {
+            "id": "error-handling",
+            "title": "Error Handling"
+          },
+          {
+            "id": "rest-api-design",
+            "title": "REST API design"
+          }
+        ]
+      },
+      {
+        "id": "tailwind",
+        "title": "Tailwind CSS",
+        "lessons": [
+          {
+            "id": "utility-classes",
+            "title": "Utility Classes",
+            "summary": "Tailwind CSS uses utility classes — small, single-purpose classes you combine directly in your HTML. No writing custom CSS files.\n\nInstead of writing `.button { background: blue; padding: 8px 16px; }` you write `bg-blue-500 px-4 py-2` directly on the element.",
+            "example": "<!-- Button with Tailwind -->\n<button class=\"bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600\">\n  Click me\n</button>\n\n<!-- Card -->\n<div class=\"bg-white shadow-md rounded-lg p-6 max-w-sm\">\n  <h2 class=\"text-xl font-bold text-gray-800\">Card Title</h2>\n  <p class=\"text-gray-600 mt-2\">Card description here.</p>\n</div>"
+          },
+          {
+            "id": "responsive-design",
+            "title": "Responsive Design",
+            "summary": "Tailwind makes responsive design easy with breakpoint prefixes. Add `md:` or `lg:` before any class to apply it only at that screen size.",
+            "example": "```html\n<!-- Stack on mobile, row on desktop -->\n<div class=\"flex flex-col md:flex-row gap-4\">\n  <div class=\"w-full md:w-1/2\">Left</div>\n  <div class=\"w-full md:w-1/2\">Right</div>\n</div>\n\n<!-- Hide on mobile, show on desktop -->\n<nav class=\"hidden md:flex gap-4\">\n  <a href=\"/\">Home</a>\n  <a href=\"/about\">About</a>\n</nav>\n```\n\n**Breakpoints:**\n- `sm:` — 640px and up\n- `md:` — 768px and up\n- `lg:` — 1024px and up\n- `xl:` — 1280px and up"
+          },
+          {
+            "id": "flexbox-grid-utilities",
+            "title": "Flexbox and Grid utilities"
+          },
+          {
+            "id": "custom-colors-spacing",
+            "title": "Custom colors and spacing"
+          },
+          {
+            "id": "dark-mode",
+            "title": "Dark mode"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tools",
+    "title": "Tools",
+    "topics": [
+      {
+        "id": "git",
+        "title": "Git",
+        "lessons": [
+          {
+            "id": "git-basics",
+            "title": "Git Basics (add, commit, push)",
+            "summary": "Git tracks changes to your code over time. Think of it like a save system — you can always go back to any previous version of your project.\n\nThe three commands you use every day:",
+            "example": "```bash\n# Stage changes (tell Git what to include)\ngit add .\n\n# Save a snapshot with a message\ngit commit -m \"feat: add login page\"\n\n# Send to GitHub\ngit push origin main\n\n# See what changed\ngit status\n\n# See commit history\ngit log --oneline\n```\n\n**Good commit message format:**\n- `feat:` — new feature\n- `fix:` — bug fix\n- `docs:` — documentation\n- `refactor:` — code cleanup"
+          },
+          {
+            "id": "branching",
+            "title": "Branching",
+            "summary": "Branches let you work on new features without touching the main code. Create a branch, do your work, then merge it back when ready.",
+            "example": "# Create and switch to new branch\ngit checkout -b feature/login-page\n\n# See all branches\ngit branch\n\n# Switch between branches\ngit checkout main\n\n# Merge branch into main\ngit merge feature/login-page\n\n# Delete branch after merging\ngit branch -d feature/login-page"
+          },
+          {
+            "id": "merging-prs",
+            "title": "Merging and Pull Requests"
+          },
+          {
+            "id": "gitignore",
+            "title": ".gitignore"
+          },
+          {
+            "id": "git-history",
+            "title": "Git history and logs"
+          }
+        ]
+      },
+      {
+        "id": "terminal",
+        "title": "Terminal/Linux",
+        "lessons": [
+          {
+            "id": "basic-commands",
+            "title": "Basic Commands (pwd, ls, cd, mkdir, rm)",
+            "summary": "The terminal lets you control your computer with text commands. Every developer uses it daily — running servers, installing packages, managing files.",
+            "example": "pwd              # show current directory\nls               # list files\nls -la           # list all files including hidden\n\ncd projects      # go into folder\ncd ..            # go back one level\ncd ~             # go to home directory\n\nmkdir my-app     # create folder\ntouch index.js   # create file\nrm file.txt      # delete file\nrm -rf folder/   # delete folder (careful!)\n\ncat file.txt     # read file contents\necho \"hello\"     # print text"
+          },
+          {
+            "id": "file-permissions",
+            "title": "File permissions (chmod)"
+          },
+          {
+            "id": "grep-and-find",
+            "title": "Grep and Find",
+            "summary": "Grep searches inside files for text. Find searches for files by name. Both are powerful tools for navigating large codebases.",
+            "example": "# Search for text inside files\ngrep \"TODO\" file.js\ngrep -r \"TODO\" .           # search all files recursively\ngrep -r \"useState\" src/    # find all useState usages\n\n# Find files by name\nfind . -name \"*.tsx\"       # all TypeScript React files\nfind . -name \"index.js\"    # find index.js anywhere\nfind . -type f -name \"*.env\" # find env files"
+          },
+          {
+            "id": "ssh-basics",
+            "title": "SSH basics"
+          },
+          {
+            "id": "environment-variables",
+            "title": "Environment variables"
+          }
+        ]
+      },
+      {
+        "id": "vscode",
+        "title": "VS Code",
+        "lessons": [
+          {
+            "id": "shortcuts",
+            "title": "Shortcuts"
+          },
+          {
+            "id": "extensions",
+            "title": "Extensions"
+          },
+          {
+            "id": "debugging",
+            "title": "Debugging"
+          },
+          {
+            "id": "terminal-integration",
+            "title": "Terminal integration"
+          },
+          {
+            "id": "git-integration",
+            "title": "Git integration"
+          }
+        ]
+      },
+      {
+        "id": "github",
+        "title": "GitHub",
+        "lessons": [
+          {
+            "id": "creating-repos",
+            "title": "Creating repositories"
+          },
+          {
+            "id": "pull-requests",
+            "title": "Pull Requests",
+            "summary": "Pull Requests (PRs) are how you propose changes to a codebase. Instead of pushing directly to main, you push to a branch and open a PR for review.\n\nThis is how every professional team works.\n\n**Steps:**\n```bash\n# 1. Create a branch\ngit checkout -b feature/new-button\n\n# 2. Make changes and commit\ngit add .\ngit commit -m \"feat: add new button component\"\n\n# 3. Push branch to GitHub\ngit push origin feature/new-button\n\n# 4. Go to GitHub and click \"Compare & pull request\"\n# 5. Add description and submit\n# 6. After review — merge the PR\n```"
+          },
+          {
+            "id": "github-actions",
+            "title": "GitHub Actions (CI/CD)",
+            "summary": "GitHub Actions automates tasks when you push code. The most common use is CI/CD — automatically running tests and deploying your app when you push to main.",
+            "example": "# .github/workflows/ci.yml\nname: CI\n\non:\n  push:\n    branches: [main]\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n      - uses: actions/setup-node@v3\n        with:\n          node-version: '18'\n      - run: npm install\n      - run: npm run build"
+          },
+          {
+            "id": "readme-best-practices",
+            "title": "README best practices"
+          },
+          {
+            "id": "github-pages",
+            "title": "GitHub Pages"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ai-and-apis",
+    "title": "AI & APIs",
+    "topics": [
+      {
+        "id": "rest-apis",
+        "title": "REST APIs",
+        "lessons": [
+          {
+            "id": "http-methods",
+            "title": "HTTP Methods (GET, POST, PUT, DELETE)",
+            "summary": "REST APIs use HTTP methods to define what action you want to perform. Think of them like verbs — GET reads, POST creates, PUT updates, DELETE removes.",
+            "example": "// GET — fetch data\nfetch('/api/users')\n  .then(res => res.json())\n  .then(users => console.log(users))\n\n// POST — create data\nfetch('/api/users', {\n  method: 'POST',\n  headers: { 'Content-Type': 'application/json' },\n  body: JSON.stringify({ name: 'Daniel', age: 20 })\n})\n\n// PUT — update data\nfetch('/api/users/1', {\n  method: 'PUT',\n  headers: { 'Content-Type': 'application/json' },\n  body: JSON.stringify({ age: 21 })\n})\n\n// DELETE — remove data\nfetch('/api/users/1', { method: 'DELETE' })"
+          },
+          {
+            "id": "status-codes",
+            "title": "Status Codes (200, 400, 401, 404, 500)",
+            "summary": "Every API response includes a status code that tells you if the request succeeded or failed.\n\n**Common codes:**\n```\n200 — OK (success)\n201 — Created (new resource made)\n400 — Bad Request (you sent wrong data)\n401 — Unauthorized (not logged in)\n403 — Forbidden (logged in but no permission)\n404 — Not Found (resource doesn't exist)\n500 — Internal Server Error (something broke on the server)\n```",
+            "example": "const response = await fetch('/api/users/999')\n\nif (response.status === 404) {\n  console.log(\"User not found\")\n} else if (response.status === 200) {\n  const user = await response.json()\n  console.log(user)\n}"
+          },
+          {
+            "id": "request-response",
+            "title": "Request and Response"
+          },
+          {
+            "id": "headers-and-body",
+            "title": "Headers and Body"
+          },
+          {
+            "id": "json-format",
+            "title": "JSON format"
+          }
+        ]
+      },
+      {
+        "id": "jwt-auth",
+        "title": "JWT Authentication",
+        "lessons": [
+          {
+            "id": "how-jwt-works",
+            "title": "How JWT works",
+            "summary": "JWT (JSON Web Token) is how apps handle authentication. After logging in, the server gives you a token. You send that token with every future request to prove who you are.\n\nThink of it like a concert wristband — show your ID once at the door, get a wristband, then flash the wristband everywhere else.\n\n**The flow:**\n```\n1. User logs in with email + password\n2. Server verifies credentials\n3. Server creates a JWT token\n4. Client stores the token\n5. Every request includes the token in the header\n6. Server verifies the token on each request\n```",
+            "example": "// Creating a token (server side)\nconst jwt = require('jsonwebtoken')\nconst token = jwt.sign(\n  { userId: 1, email: 'daniel@example.com' },\n  process.env.JWT_SECRET,\n  { expiresIn: '1h' }\n)\n\n// Verifying a token (server side)\njwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {\n  if (err) return res.status(401).json({ message: 'Invalid token' })\n  console.log(decoded)  // { userId: 1, email: '...' }\n})\n\n// Sending token in requests (client side)\nfetch('/api/profile', {\n  headers: {\n    'Authorization': `Bearer ${token}`\n  }\n})"
+          },
+          {
+            "id": "register-login",
+            "title": "Register and Login flow"
+          },
+          {
+            "id": "token-verification",
+            "title": "Token verification"
+          },
+          {
+            "id": "protected-routes",
+            "title": "Protected routes"
+          },
+          {
+            "id": "refresh-tokens",
+            "title": "Refresh tokens"
+          }
+        ]
+      },
+      {
+        "id": "gemini-api",
+        "title": "Google Gemini API",
+        "lessons": [
+          {
+            "id": "setting-up-api-key",
+            "title": "Setting up API key"
+          },
+          {
+            "id": "making-requests",
+            "title": "Making requests"
+          },
+          {
+            "id": "prompt-design",
+            "title": "Prompt design"
+          },
+          {
+            "id": "handling-responses",
+            "title": "Handling responses"
+          },
+          {
+            "id": "use-cases",
+            "title": "Use cases"
+          }
+        ]
+      },
+      {
+        "id": "api-integration",
+        "title": "API Integration",
+        "lessons": [
+          {
+            "id": "fetch-api",
+            "title": "Fetch API"
+          },
+          {
+            "id": "async-await-apis",
+            "title": "Async/Await with APIs"
+          },
+          {
+            "id": "error-handling",
+            "title": "Error handling"
+          },
+          {
+            "id": "env-vars-for-keys",
+            "title": "Environment variables for keys"
+          },
+          {
+            "id": "cors",
+            "title": "CORS"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "concepts",
+    "title": "Concepts",
+    "topics": [
+      {
+        "id": "algorithms",
+        "title": "Algorithms",
+        "lessons": [
+          {
+            "id": "sliding-window",
+            "title": "Sliding Window",
+            "summary": "Sliding Window is a technique for working with arrays or strings. Instead of using nested loops (slow), you maintain a window that slides through the data (fast).\n\nUse it when you need to find a subarray or substring that meets some condition.",
+            "example": "// Find max sum of k consecutive numbers\nfunction maxWindowSum(nums: number[], k: number): number {\n  // Calculate first window\n  let windowSum = nums.slice(0, k).reduce((total, val) => total + val, 0)\n  let maxSum = windowSum\n\n  // Slide the window\n  for (let i = k; i < nums.length; i++) {\n    windowSum += nums[i] - nums[i - k]  // add new, remove old\n    maxSum = Math.max(maxSum, windowSum)\n  }\n\n  return maxSum\n}\n\nmaxWindowSum([2, 1, 5, 1, 3, 2], 3)  // 9 (5+1+3)"
+          },
+          {
+            "id": "two-pointers",
+            "title": "Two Pointers",
+            "summary": "Two Pointers uses two variables moving through data — usually one from each end. It replaces nested loops with a single loop, making your code much faster.\n\nUse it on sorted arrays when looking for pairs or comparing from both sides.",
+            "example": "// Check if array has two numbers that sum to target\nfunction twoSum(nums: number[], target: number): boolean {\n  let left = 0\n  let right = nums.length - 1\n\n  while (left < right) {\n    const sum = nums[left] + nums[right]\n    if (sum === target) return true\n    if (sum < target) left++   // need bigger number\n    if (sum > target) right--  // need smaller number\n  }\n\n  return false\n}"
+          },
+          {
+            "id": "hash-maps",
+            "title": "Hash Maps",
+            "summary": "Hash Maps (objects in JavaScript) store key-value pairs for O(1) lookup — instant access regardless of size. Use them for counting, grouping, and caching.",
+            "example": "// Count character frequency\nfunction charCount(str: string): Record<string, number> {\n  const count: Record<string, number> = {}\n\n  for (const char of str) {\n    count[char] = (count[char] || 0) + 1\n  }\n\n  return count\n}\n\ncharCount(\"hello\")\n// { h: 1, e: 1, l: 2, o: 1 }\n\n// Find first non-repeating character\nfunction firstUnique(str: string): string {\n  const count = charCount(str)\n  \n  for (const char of str) {\n    if (count[char] === 1) return char\n  }\n  \n  return \"\"\n}"
+          },
+          {
+            "id": "binary-search",
+            "title": "Binary Search"
+          },
+          {
+            "id": "recursion",
+            "title": "Recursion"
+          }
+        ]
+      },
+      {
+        "id": "data-structures",
+        "title": "Data Structures",
+        "lessons": [
+          {
+            "id": "arrays",
+            "title": "Arrays"
+          },
+          {
+            "id": "objects",
+            "title": "Objects"
+          },
+          {
+            "id": "linked-lists",
+            "title": "Linked Lists (concept)"
+          },
+          {
+            "id": "stacks-and-queues",
+            "title": "Stacks and Queues"
+          },
+          {
+            "id": "trees",
+            "title": "Trees (concept)"
+          }
+        ]
+      },
+      {
+        "id": "clean-code",
+        "title": "Clean Code",
+        "lessons": [
+          {
+            "id": "dry",
+            "title": "DRY principle",
+            "summary": "DRY stands for Don't Repeat Yourself. If you write the same code more than once, extract it into a function or component.\n\nRepeated code means if you need to change something, you have to change it in multiple places — leading to bugs.",
+            "example": "// BAD — repeated code\nfunction getUserAge(user) {\n  const now = new Date()\n  const birth = new Date(user.birthDate)\n  return now.getFullYear() - birth.getFullYear()\n}\n\nfunction getEmployeeAge(employee) {\n  const now = new Date()\n  const birth = new Date(employee.birthDate)\n  return now.getFullYear() - birth.getFullYear()\n}\n\n// GOOD — one function, used everywhere\nfunction getAge(birthDate: string): number {\n  const now = new Date()\n  const birth = new Date(birthDate)\n  return now.getFullYear() - birth.getFullYear()\n}\n\ngetUserAge = (user) => getAge(user.birthDate)\ngetEmployeeAge = (emp) => getAge(emp.birthDate)"
+          },
+          {
+            "id": "single-responsibility",
+            "title": "Single Responsibility"
+          },
+          {
+            "id": "meaningful-names",
+            "title": "Meaningful variable names"
+          },
+          {
+            "id": "code-comments",
+            "title": "Code comments"
+          },
+          {
+            "id": "refactoring",
+            "title": "Refactoring"
+          }
+        ]
+      },
+      {
+        "id": "solid",
+        "title": "SOLID Principles",
+        "lessons": [
+          {
+            "id": "single-responsibility",
+            "title": "Single Responsibility"
+          },
+          {
+            "id": "open-closed",
+            "title": "Open/Closed"
+          },
+          {
+            "id": "liskov-substitution",
+            "title": "Liskov Substitution"
+          },
+          {
+            "id": "interface-segregation",
+            "title": "Interface Segregation"
+          },
+          {
+            "id": "dependency-inversion",
+            "title": "Dependency Inversion"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "devops",
+    "title": "DevOps",
+    "topics": [
+      {
+        "id": "github-actions",
+        "title": "GitHub Actions",
+        "lessons": [
+          {
+            "id": "what-is-cicd",
+            "title": "What is CI/CD"
+          },
+          {
+            "id": "workflow-file",
+            "title": "Writing a workflow file",
+            "summary": "GitHub Actions workflows are written in YAML files stored in `.github/workflows/`. They define what happens when you push code, open a PR, or on a schedule.",
+            "example": "name: CI/CD Pipeline\n\non:\n  push:\n    branches: [main]\n  pull_request:\n    branches: [main]\n\njobs:\n  test-and-build:\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Checkout code\n        uses: actions/checkout@v3\n\n      - name: Setup Node.js\n        uses: actions/setup-node@v3\n        with:\n          node-version: '18'\n\n      - name: Install dependencies\n        run: npm install\n\n      - name: Run tests\n        run: npm test\n\n      - name: Build\n        run: npm run build"
+          },
+          {
+            "id": "running-tests",
+            "title": "Running tests automatically"
+          },
+          {
+            "id": "deploying-on-push",
+            "title": "Deploying on push"
+          },
+          {
+            "id": "status-badges",
+            "title": "Status badges"
+          }
+        ]
+      },
+      {
+        "id": "docker",
+        "title": "Docker (basics)",
+        "lessons": [
+          {
+            "id": "what-is-docker",
+            "title": "What is Docker"
+          },
+          {
+            "id": "images-and-containers",
+            "title": "Images and Containers"
+          },
+          {
+            "id": "dockerfile-basics",
+            "title": "Dockerfile basics"
+          },
+          {
+            "id": "docker-compose",
+            "title": "Docker Compose concept"
+          },
+          {
+            "id": "why-containerization",
+            "title": "Why containerization matters"
+          }
+        ]
+      },
+      {
+        "id": "deployment",
+        "title": "Deployment",
+        "lessons": [
+          {
+            "id": "vercel",
+            "title": "Vercel (frontend)",
+            "summary": "Vercel is the easiest way to deploy Next.js and React apps. Connect your GitHub repo and every push to main automatically deploys your app.\n\n**Steps:**\n```\n1. Go to vercel.com\n2. Click \"New Project\"\n3. Import your GitHub repo\n4. Configure build settings (usually auto-detected)\n5. Add environment variables\n6. Click Deploy\n\nEvery push to main → auto deploys\nEvery PR → preview deployment\n```"
+          },
+          {
+            "id": "render",
+            "title": "Render (backend)"
+          },
+          {
+            "id": "env-vars-production",
+            "title": "Environment variables in production",
+            "summary": "Environment variables store sensitive data like API keys and database URLs outside your code. Never hardcode secrets — never commit them to GitHub.",
+            "example": "# .env file (never commit this)\nDATABASE_URL=postgresql://user:password@host/db\nJWT_SECRET=your-secret-key\nGEMINI_API_KEY=your-api-key\n\n# .env.example (commit this — shows what variables are needed)\nDATABASE_URL=\nJWT_SECRET=\nGEMINI_API_KEY=\n```\n\n```js\n// Access in Node.js\nconst dbUrl = process.env.DATABASE_URL\n\n// Access in Next.js (must prefix with NEXT_PUBLIC_ for client)\nconst apiUrl = process.env.NEXT_PUBLIC_API_URL"
+          },
+          {
+            "id": "custom-domains",
+            "title": "Custom domains"
+          },
+          {
+            "id": "monitoring-basics",
+            "title": "Monitoring basics"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "databases",
+    "title": "Databases",
+    "topics": [
+      {
+        "id": "postgresql",
+        "title": "PostgreSQL",
+        "lessons": [
+          {
+            "id": "what-is-postgresql",
+            "title": "What is PostgreSQL",
+            "summary": "PostgreSQL is a powerful open-source relational database. Data is stored in tables with rows and columns — like a spreadsheet, but much more powerful and queryable.\n\nYou've already used it in Magnifit and FinderDallas through Supabase.",
+            "example": "-- Create a table\nCREATE TABLE users (\n  id SERIAL PRIMARY KEY,\n  name TEXT NOT NULL,\n  email TEXT UNIQUE NOT NULL,\n  age INTEGER,\n  created_at TIMESTAMP DEFAULT NOW()\n);\n\n-- Insert data\nINSERT INTO users (name, email, age)\nVALUES ('Daniel', 'daniel@example.com', 20);\n\n-- Query data\nSELECT * FROM users WHERE age > 18;\n\n-- Update data\nUPDATE users SET age = 21 WHERE id = 1;\n\n-- Delete data\nDELETE FROM users WHERE id = 1;"
+          },
+          {
+            "id": "tables-and-schemas",
+            "title": "Tables and schemas"
+          },
+          {
+            "id": "crud-operations",
+            "title": "CRUD operations"
+          },
+          {
+            "id": "relationships",
+            "title": "Relationships (one-to-many)",
+            "summary": "Tables can be related to each other. A user can have many posts. A post belongs to one user. This is called a one-to-many relationship.",
+            "example": "-- Users table\nCREATE TABLE users (\n  id SERIAL PRIMARY KEY,\n  name TEXT NOT NULL\n);\n\n-- Posts table (belongs to a user)\nCREATE TABLE posts (\n  id SERIAL PRIMARY KEY,\n  title TEXT NOT NULL,\n  content TEXT,\n  user_id INTEGER REFERENCES users(id),  -- foreign key\n  created_at TIMESTAMP DEFAULT NOW()\n);\n\n-- Get all posts with author name\nSELECT posts.title, users.name AS author\nFROM posts\nINNER JOIN users ON posts.user_id = users.id;"
+          },
+          {
+            "id": "supabase-setup",
+            "title": "Supabase setup"
+          }
+        ]
+      },
+      {
+        "id": "sql-queries",
+        "title": "SQL Queries",
+        "lessons": [
+          {
+            "id": "select-and-filtering",
+            "title": "SELECT and filtering"
+          },
+          {
+            "id": "joins",
+            "title": "JOINs (INNER, LEFT, RIGHT)"
+          },
+          {
+            "id": "aggregate-functions",
+            "title": "Aggregate functions"
+          },
+          {
+            "id": "subqueries",
+            "title": "Subqueries"
+          },
+          {
+            "id": "indexes-performance",
+            "title": "Indexes and performance"
+          }
+        ]
+      },
+      {
+        "id": "mongodb",
+        "title": "MongoDB (basics)",
+        "lessons": [
+          {
+            "id": "what-is-nosql",
+            "title": "What is NoSQL",
+            "summary": "MongoDB is a NoSQL database — instead of tables and rows, it stores documents (like JSON objects) in collections. More flexible than SQL but less structured.\n\nWhen to use SQL vs NoSQL:\n- SQL (PostgreSQL) → structured data, relationships, financial data\n- NoSQL (MongoDB) → flexible data, rapid prototyping, content",
+            "example": "// MongoDB document (looks like JSON)\n{\n  \"_id\": \"64abc123\",\n  \"name\": \"Daniel\",\n  \"age\": 20,\n  \"skills\": [\"JavaScript\", \"Python\"],\n  \"address\": {\n    \"city\": \"Dallas\",\n    \"state\": \"TX\"\n  }\n}\n\n// vs SQL table row\n// id | name   | age\n// 1  | Daniel | 20\n// (skills and address would be separate tables)"
+          },
+          {
+            "id": "documents-collections",
+            "title": "Documents and Collections"
+          },
+          {
+            "id": "crud-mongodb",
+            "title": "CRUD in MongoDB"
+          },
+          {
+            "id": "sql-vs-nosql",
+            "title": "When to use SQL vs NoSQL"
+          },
+          {
+            "id": "mongoose-basics",
+            "title": "Mongoose basics"
+          }
+        ]
+      }
+    ]
+  }
+]
