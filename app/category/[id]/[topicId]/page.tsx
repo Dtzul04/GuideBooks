@@ -7,8 +7,8 @@ export default async function TopicPage({
   params: Promise<{ id: string; topicId: string }>;
 }) {
   const { id, topicId } = await params;
-  const category = content.find((item) => item.id === id)
-  const topic = category?.topics.find((item) => item.id === topicId)
+  const category = content.find((item) => item.id === id);
+  const topic = category?.topics.find((item) => item.id === topicId);
 
   return (
     <main>
@@ -16,7 +16,11 @@ export default async function TopicPage({
       <h1>{topic?.title}</h1>
       <ul>
         {topic?.lessons.map((lesson) => (
-          <li key={lesson.id}>{lesson.title}</li>
+          <li key={lesson.id}>
+            <Link href={`/category/${id}/${topicId}/${lesson.id}`}>
+              {lesson.title}
+            </Link>
+          </li>
         ))}
       </ul>
     </main>
