@@ -1,0 +1,370 @@
+{
+  "roadmaps": [
+    {
+      "id": "frontend",
+      "title": "Frontend Developer",
+      "description": "Build beautiful, interactive user interfaces for the web.",
+      "color": "blue",
+      "stages": [
+        {
+          "level": "Beginner",
+          "title": "The Foundation",
+          "topics": [
+            {
+              "name": "HTML5",
+              "description": "Structure web pages with semantic elements",
+              "resources": "MDN Web Docs",
+              "status": "start-here"
+            },
+            {
+              "name": "CSS3",
+              "description": "Style and layout \u2014 flexbox, grid, responsive design",
+              "resources": "CSS Tricks",
+              "status": "start-here"
+            },
+            {
+              "name": "JavaScript Basics",
+              "description": "Variables, functions, loops, arrays, objects",
+              "resources": "javascript.info",
+              "status": "start-here"
+            },
+            {
+              "name": "Git & GitHub",
+              "description": "Version control and pushing code",
+              "resources": "GitHub Docs",
+              "status": "start-here"
+            }
+          ]
+        },
+        {
+          "level": "Intermediate",
+          "title": "Modern JavaScript & React",
+          "topics": [
+            {
+              "name": "ES6+ JavaScript",
+              "description": "Arrow functions, destructuring, async/await, modules",
+              "resources": "javascript.info",
+              "status": "next"
+            },
+            {
+              "name": "React",
+              "description": "Components, props, useState, useEffect",
+              "resources": "react.dev",
+              "status": "next"
+            },
+            {
+              "name": "TypeScript",
+              "description": "Types, interfaces, generics \u2014 safer JavaScript",
+              "resources": "typescriptlang.org",
+              "status": "next"
+            },
+            {
+              "name": "Tailwind CSS",
+              "description": "Utility-first CSS framework",
+              "resources": "tailwindcss.com",
+              "status": "next"
+            },
+            {
+              "name": "REST APIs",
+              "description": "Fetching data from backends using fetch/axios",
+              "resources": "MDN Web Docs",
+              "status": "next"
+            }
+          ]
+        },
+        {
+          "level": "Advanced",
+          "title": "Production Ready",
+          "topics": [
+            {
+              "name": "Next.js",
+              "description": "React framework with routing, SSR, and API routes",
+              "resources": "nextjs.org",
+              "status": "advanced"
+            },
+            {
+              "name": "Testing",
+              "description": "Unit and integration testing with Jest and Playwright",
+              "resources": "jestjs.io",
+              "status": "advanced"
+            },
+            {
+              "name": "Performance Optimization",
+              "description": "Lazy loading, code splitting, Web Vitals",
+              "resources": "web.dev",
+              "status": "advanced"
+            },
+            {
+              "name": "Accessibility (a11y)",
+              "description": "WCAG standards, screen readers, semantic HTML",
+              "resources": "a11yproject.com",
+              "status": "advanced"
+            },
+            {
+              "name": "CI/CD & Deployment",
+              "description": "GitHub Actions, Vercel, Netlify",
+              "resources": "Vercel Docs",
+              "status": "advanced"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "backend",
+      "title": "Backend Developer",
+      "description": "Build powerful servers, APIs, and databases that power applications.",
+      "color": "green",
+      "stages": [
+        {
+          "level": "Beginner",
+          "title": "The Foundation",
+          "topics": [
+            {
+              "name": "JavaScript or Python",
+              "description": "Pick one language and learn it deeply",
+              "resources": "javascript.info or cs50.harvard.edu/python",
+              "status": "start-here"
+            },
+            {
+              "name": "Git & GitHub",
+              "description": "Version control for your projects",
+              "resources": "GitHub Docs",
+              "status": "start-here"
+            },
+            {
+              "name": "Terminal & Linux",
+              "description": "Basic commands \u2014 ls, cd, mkdir, grep, SSH",
+              "resources": "linuxcommand.org",
+              "status": "start-here"
+            },
+            {
+              "name": "HTTP Basics",
+              "description": "How requests and responses work",
+              "resources": "MDN Web Docs",
+              "status": "start-here"
+            }
+          ]
+        },
+        {
+          "level": "Intermediate",
+          "title": "Servers, APIs & Databases",
+          "topics": [
+            {
+              "name": "Node.js",
+              "description": "JavaScript runtime for building servers",
+              "resources": "nodejs.org",
+              "status": "next"
+            },
+            {
+              "name": "Express.js",
+              "description": "Build REST APIs with routes and middleware",
+              "resources": "expressjs.com",
+              "status": "next"
+            },
+            {
+              "name": "SQL & PostgreSQL",
+              "description": "Relational databases \u2014 SELECT, JOIN, CRUD",
+              "resources": "pgexercises.com",
+              "status": "next"
+            },
+            {
+              "name": "REST API Design",
+              "description": "HTTP methods, status codes, clean endpoint design",
+              "resources": "restfulapi.net",
+              "status": "next"
+            },
+            {
+              "name": "Authentication",
+              "description": "JWT, bcrypt, sessions, OAuth basics",
+              "resources": "jwt.io",
+              "status": "next"
+            },
+            {
+              "name": "Environment Variables",
+              "description": "Keeping secrets safe with .env files",
+              "resources": "dotenv docs",
+              "status": "next"
+            }
+          ]
+        },
+        {
+          "level": "Advanced",
+          "title": "Production Ready",
+          "topics": [
+            {
+              "name": "TypeScript with Node",
+              "description": "Type-safe backend development",
+              "resources": "typescriptlang.org",
+              "status": "advanced"
+            },
+            {
+              "name": "Docker",
+              "description": "Containerize your applications",
+              "resources": "docs.docker.com",
+              "status": "advanced"
+            },
+            {
+              "name": "CI/CD",
+              "description": "GitHub Actions for automated testing and deployment",
+              "resources": "GitHub Actions Docs",
+              "status": "advanced"
+            },
+            {
+              "name": "Cloud Basics (AWS)",
+              "description": "S3, EC2, Lambda \u2014 deploy to the cloud",
+              "resources": "aws.amazon.com",
+              "status": "advanced"
+            },
+            {
+              "name": "Caching & Performance",
+              "description": "Redis, rate limiting, query optimization",
+              "resources": "redis.io",
+              "status": "advanced"
+            },
+            {
+              "name": "Testing",
+              "description": "Unit and integration tests with Jest",
+              "resources": "jestjs.io",
+              "status": "advanced"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fullstack",
+      "title": "Full Stack Developer",
+      "description": "Master both frontend and backend to build complete applications end to end.",
+      "color": "purple",
+      "stages": [
+        {
+          "level": "Beginner",
+          "title": "The Foundation",
+          "topics": [
+            {
+              "name": "HTML, CSS & JavaScript",
+              "description": "The three pillars of the web",
+              "resources": "MDN Web Docs",
+              "status": "start-here"
+            },
+            {
+              "name": "Git & GitHub",
+              "description": "Version control from day one",
+              "resources": "GitHub Docs",
+              "status": "start-here"
+            },
+            {
+              "name": "Terminal Basics",
+              "description": "Navigate your computer from the command line",
+              "resources": "linuxcommand.org",
+              "status": "start-here"
+            },
+            {
+              "name": "How the Web Works",
+              "description": "Client vs server, HTTP, DNS, browsers",
+              "resources": "MDN Web Docs",
+              "status": "start-here"
+            }
+          ]
+        },
+        {
+          "level": "Intermediate",
+          "title": "Frontend + Backend",
+          "topics": [
+            {
+              "name": "React",
+              "description": "Components, state, props, hooks",
+              "resources": "react.dev",
+              "status": "next"
+            },
+            {
+              "name": "TypeScript",
+              "description": "Type safety across your entire stack",
+              "resources": "typescriptlang.org",
+              "status": "next"
+            },
+            {
+              "name": "Node.js + Express",
+              "description": "Build REST APIs on the server",
+              "resources": "expressjs.com",
+              "status": "next"
+            },
+            {
+              "name": "PostgreSQL",
+              "description": "Relational database for your data",
+              "resources": "pgexercises.com",
+              "status": "next"
+            },
+            {
+              "name": "JWT Authentication",
+              "description": "Secure login and protected routes",
+              "resources": "jwt.io",
+              "status": "next"
+            },
+            {
+              "name": "REST APIs",
+              "description": "Connect frontend to backend seamlessly",
+              "resources": "restfulapi.net",
+              "status": "next"
+            },
+            {
+              "name": "Tailwind CSS",
+              "description": "Style your UI fast and cleanly",
+              "resources": "tailwindcss.com",
+              "status": "next"
+            }
+          ]
+        },
+        {
+          "level": "Advanced",
+          "title": "Production Ready",
+          "topics": [
+            {
+              "name": "Next.js",
+              "description": "Full stack React framework",
+              "resources": "nextjs.org",
+              "status": "advanced"
+            },
+            {
+              "name": "CI/CD with GitHub Actions",
+              "description": "Automate testing and deployment",
+              "resources": "GitHub Actions Docs",
+              "status": "advanced"
+            },
+            {
+              "name": "Docker",
+              "description": "Containerize and ship your apps",
+              "resources": "docs.docker.com",
+              "status": "advanced"
+            },
+            {
+              "name": "Cloud Deployment (AWS/Vercel/Render)",
+              "description": "Deploy to production environments",
+              "resources": "Vercel Docs",
+              "status": "advanced"
+            },
+            {
+              "name": "Testing",
+              "description": "Jest for backend, Playwright for E2E",
+              "resources": "jestjs.io",
+              "status": "advanced"
+            },
+            {
+              "name": "System Design Basics",
+              "description": "Scalability, caching, load balancing concepts",
+              "resources": "system-design-primer on GitHub",
+              "status": "advanced"
+            },
+            {
+              "name": "AI Integration",
+              "description": "Connect LLM APIs like Gemini or OpenAI",
+              "resources": "ai.google.dev",
+              "status": "advanced"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

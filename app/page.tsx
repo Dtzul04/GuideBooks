@@ -11,12 +11,7 @@ export default function Home() {
         <CategoryCard key={topic.id} id={topic.id} title={topic.title} />
       ))}
 
-      {/* Practice props — change these later when a real lesson is selected */}
-      <Quiz
-        categoryId="languages"
-        topicId="javascript"
-        lessonId="variables"
-      />
+      <Quiz categoryId="languages" topicId="javascript" />
       <Roadmap />
     </main>
   );
