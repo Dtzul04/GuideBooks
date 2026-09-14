@@ -1,0 +1,736 @@
+{
+  "quiz": {
+    "languages": {
+      "javascript": {
+        "variables": [
+          {
+            "question": "Which keyword creates a variable that cannot be reassigned?",
+            "options": ["let", "var", "const", "new"],
+            "answer": "const"
+          },
+          {
+            "question": "Which is the modern way to declare a changeable variable?",
+            "options": ["var", "let", "const", "set"],
+            "answer": "let"
+          },
+          {
+            "question": "What is wrong with using 'var'?",
+            "options": ["It's too slow", "It's function scoped not block scoped", "It can't store numbers", "It's not supported"],
+            "answer": "It's function scoped not block scoped"
+          },
+          {
+            "question": "What happens if you try to reassign a const variable?",
+            "options": ["It updates silently", "It throws a TypeError", "It creates a new variable", "Nothing happens"],
+            "answer": "It throws a TypeError"
+          },
+          {
+            "question": "Which should you use by default?",
+            "options": ["var", "let", "const", "set"],
+            "answer": "const"
+          }
+        ],
+        "functions": [
+          {
+            "question": "What keyword defines a regular function?",
+            "options": ["func", "function", "def", "arrow"],
+            "answer": "function"
+          },
+          {
+            "question": "What does an arrow function use?",
+            "options": ["=>", "->", "::", ">>"],
+            "answer": "=>"
+          },
+          {
+            "question": "What does return do?",
+            "options": ["Stops the function", "Sends back a value", "Logs to console", "Creates a variable"],
+            "answer": "Sends back a value"
+          },
+          {
+            "question": "What are function inputs called?",
+            "options": ["Arguments only", "Parameters", "Variables", "Constants"],
+            "answer": "Parameters"
+          },
+          {
+            "question": "Which is the modern preferred way to write functions?",
+            "options": ["Regular functions", "Arrow functions", "Named functions", "Anonymous functions"],
+            "answer": "Arrow functions"
+          },
+          {
+            "question": "What is a function?",
+            "options": ["A variable", "A reusable block of code", "A data type", "A loop"],
+            "answer": "A reusable block of code"
+          }
+        ],
+        "array-methods": [
+          {
+            "question": "Which method transforms every item in an array?",
+            "options": ["filter", "reduce", "map", "find"],
+            "answer": "map"
+          },
+          {
+            "question": "Which method keeps only matching items?",
+            "options": ["map", "filter", "reduce", "sort"],
+            "answer": "filter"
+          },
+          {
+            "question": "Which method combines an array into one value?",
+            "options": ["map", "filter", "reduce", "join"],
+            "answer": "reduce"
+          },
+          {
+            "question": "What does .find() return?",
+            "options": ["All matching items", "The first matching item", "The index of a match", "A boolean"],
+            "answer": "The first matching item"
+          },
+          {
+            "question": "What does .some() return?",
+            "options": ["An array", "A number", "A boolean", "A string"],
+            "answer": "A boolean"
+          },
+          {
+            "question": "What does .every() check?",
+            "options": ["If any item matches", "If all items match", "The length of an array", "The first item"],
+            "answer": "If all items match"
+          },
+          {
+            "question": "Which method would you use to double every number in an array?",
+            "options": ["filter", "find", "map", "reduce"],
+            "answer": "map"
+          },
+          {
+            "question": "Which method would you use to get only even numbers from an array?",
+            "options": ["map", "filter", "reduce", "find"],
+            "answer": "filter"
+          }
+        ],
+        "async-await": [
+          {
+            "question": "What keyword makes a function asynchronous?",
+            "options": ["wait", "async", "defer", "sync"],
+            "answer": "async"
+          },
+          {
+            "question": "What keyword pauses until a promise resolves?",
+            "options": ["pause", "stop", "await", "hold"],
+            "answer": "await"
+          },
+          {
+            "question": "What does fetch() return?",
+            "options": ["A string", "A number", "A Promise", "An array"],
+            "answer": "A Promise"
+          },
+          {
+            "question": "What is used to handle errors in async functions?",
+            "options": ["if/else", "try/catch", "switch", "while"],
+            "answer": "try/catch"
+          },
+          {
+            "question": "What does .json() do on a fetch response?",
+            "options": ["Converts response to text", "Parses the JSON body", "Sends a request", "Creates a promise"],
+            "answer": "Parses the JSON body"
+          },
+          {
+            "question": "Why do we need async/await?",
+            "options": ["To make code faster", "To handle operations that take time", "To create variables", "To style elements"],
+            "answer": "To handle operations that take time"
+          }
+        ],
+        "objects": [
+          {
+            "question": "How do you access an object property?",
+            "options": ["object->property", "object.property", "object[property]", "Both B and C"],
+            "answer": "Both B and C"
+          },
+          {
+            "question": "What is destructuring?",
+            "options": ["Deleting an object", "Extracting values from an object", "Merging two objects", "Copying an object"],
+            "answer": "Extracting values from an object"
+          },
+          {
+            "question": "What does const { name } = user do?",
+            "options": ["Creates a new user", "Extracts name from user object", "Deletes name from user", "Updates name in user"],
+            "answer": "Extracts name from user object"
+          },
+          {
+            "question": "What symbol is used for destructuring?",
+            "options": ["()", "[]", "{}", "<>"],
+            "answer": "{}"
+          },
+          {
+            "question": "How do you add a new property to an object?",
+            "options": ["object.push()", "object.newProp = value", "object.add()", "object.set()"],
+            "answer": "object.newProp = value"
+          }
+        ],
+        "template-literals": [
+          {
+            "question": "What character starts a template literal?",
+            "options": ["'", "\"", "`", "/"],
+            "answer": "`"
+          },
+          {
+            "question": "How do you embed a variable in a template literal?",
+            "options": ["${variable}", "{variable}", "$(variable)", "[[variable]]"],
+            "answer": "${variable}"
+          },
+          {
+            "question": "What is a benefit of template literals over string concatenation?",
+            "options": ["They are faster", "They are cleaner and easier to read", "They use less memory", "They are required in modern JS"],
+            "answer": "They are cleaner and easier to read"
+          },
+          {
+            "question": "Template literals support multi-line strings. True or false?",
+            "options": ["True", "False"],
+            "answer": "True"
+          }
+        ],
+        "error-handling": [
+          {
+            "question": "What block contains code that might throw an error?",
+            "options": ["catch", "finally", "try", "throw"],
+            "answer": "try"
+          },
+          {
+            "question": "What block runs when an error occurs?",
+            "options": ["try", "catch", "finally", "error"],
+            "answer": "catch"
+          },
+          {
+            "question": "What block always runs regardless of success or failure?",
+            "options": ["try", "catch", "finally", "always"],
+            "answer": "finally"
+          },
+          {
+            "question": "How do you manually throw an error?",
+            "options": ["error()", "throw new Error()", "catch()", "raise()"],
+            "answer": "throw new Error()"
+          },
+          {
+            "question": "What property gives you the error message?",
+            "options": ["error.text", "error.message", "error.description", "error.info"],
+            "answer": "error.message"
+          }
+        ]
+      },
+      "typescript": {
+        "basic-types": [
+          {
+            "question": "What type holds text in TypeScript?",
+            "options": ["text", "str", "string", "char"],
+            "answer": "string"
+          },
+          {
+            "question": "What type should you avoid using?",
+            "options": ["string", "number", "any", "boolean"],
+            "answer": "any"
+          },
+          {
+            "question": "What does boolean hold?",
+            "options": ["Numbers", "Text", "True or false", "Arrays"],
+            "answer": "True or false"
+          },
+          {
+            "question": "How do you type an array of numbers?",
+            "options": ["Array", "number[]", "numbers", "int[]"],
+            "answer": "number[]"
+          },
+          {
+            "question": "What does TypeScript add to JavaScript?",
+            "options": ["Speed", "Types", "New syntax", "A new runtime"],
+            "answer": "Types"
+          },
+          {
+            "question": "When are TypeScript errors caught?",
+            "options": ["At runtime", "At compile time", "In the browser", "Never"],
+            "answer": "At compile time"
+          }
+        ],
+        "interfaces": [
+          {
+            "question": "What does an interface define?",
+            "options": ["A function", "The shape of an object", "A loop", "A class"],
+            "answer": "The shape of an object"
+          },
+          {
+            "question": "What keyword creates an interface?",
+            "options": ["type", "class", "interface", "shape"],
+            "answer": "interface"
+          },
+          {
+            "question": "What does ? mean after a property in an interface?",
+            "options": ["Required", "Optional", "Read-only", "Private"],
+            "answer": "Optional"
+          },
+          {
+            "question": "What happens if you miss a required field from an interface?",
+            "options": ["Nothing", "TypeScript gives an error", "It defaults to null", "It skips it"],
+            "answer": "TypeScript gives an error"
+          },
+          {
+            "question": "Can interfaces be reused across multiple files?",
+            "options": ["No", "Yes, by exporting them", "Only in the same file", "Only with classes"],
+            "answer": "Yes, by exporting them"
+          }
+        ],
+        "generics": [
+          {
+            "question": "What is the purpose of generics?",
+            "options": ["To make code slower", "To write reusable code for different types", "To avoid using types", "To create classes"],
+            "answer": "To write reusable code for different types"
+          },
+          {
+            "question": "What symbol is used for generics?",
+            "options": ["()", "[]", "<>", "{}"],
+            "answer": "<>"
+          },
+          {
+            "question": "What does T represent in generics?",
+            "options": ["TypeScript", "A placeholder for any type", "A string type", "A number type"],
+            "answer": "A placeholder for any type"
+          },
+          {
+            "question": "When is the generic type filled in?",
+            "options": ["When writing the function", "When calling the function", "Never", "At compile time only"],
+            "answer": "When calling the function"
+          }
+        ]
+      },
+      "html-css": {
+        "semantic-html": [
+          {
+            "question": "What is semantic HTML?",
+            "options": ["Colorful HTML", "Meaningful tags that describe content", "Fast HTML", "Compressed HTML"],
+            "answer": "Meaningful tags that describe content"
+          },
+          {
+            "question": "Which tag wraps the main navigation?",
+            "options": ["menu", "nav", "links", "header"],
+            "answer": "nav"
+          },
+          {
+            "question": "What tag wraps the main page content?",
+            "options": ["body", "div", "main", "content"],
+            "answer": "main"
+          },
+          {
+            "question": "Why use semantic HTML?",
+            "options": ["It looks better", "It helps SEO and accessibility", "It loads faster", "It uses less code"],
+            "answer": "It helps SEO and accessibility"
+          },
+          {
+            "question": "Which tag should you use for a blog post?",
+            "options": ["div", "section", "article", "p"],
+            "answer": "article"
+          }
+        ],
+        "flexbox": [
+          {
+            "question": "What property enables flexbox?",
+            "options": ["flex: true", "display: flex", "position: flex", "layout: flex"],
+            "answer": "display: flex"
+          },
+          {
+            "question": "What aligns items horizontally?",
+            "options": ["align-items", "justify-content", "flex-direction", "gap"],
+            "answer": "justify-content"
+          },
+          {
+            "question": "What aligns items vertically?",
+            "options": ["justify-content", "align-items", "flex-wrap", "order"],
+            "answer": "align-items"
+          },
+          {
+            "question": "What is the default flex-direction?",
+            "options": ["column", "row", "row-reverse", "wrap"],
+            "answer": "row"
+          },
+          {
+            "question": "What property adds space between flex items?",
+            "options": ["margin", "padding", "gap", "space"],
+            "answer": "gap"
+          },
+          {
+            "question": "What does flex-wrap: wrap do?",
+            "options": ["Hides overflow items", "Allows items to wrap to next line", "Centers items", "Reverses order"],
+            "answer": "Allows items to wrap to next line"
+          }
+        ]
+      }
+    },
+    "frameworks": {
+      "react": {
+        "components": [
+          {
+            "question": "What is a React component?",
+            "options": ["A CSS class", "A reusable piece of UI", "A database table", "A server"],
+            "answer": "A reusable piece of UI"
+          },
+          {
+            "question": "What does a component return?",
+            "options": ["CSS", "JSON", "JSX", "SQL"],
+            "answer": "JSX"
+          },
+          {
+            "question": "What are props?",
+            "options": ["CSS properties", "Data passed into a component", "Database queries", "Event handlers"],
+            "answer": "Data passed into a component"
+          },
+          {
+            "question": "Can props be modified inside a component?",
+            "options": ["Yes always", "No, props are read-only", "Only with useState", "Only in class components"],
+            "answer": "No, props are read-only"
+          },
+          {
+            "question": "What is JSX?",
+            "options": ["A database query language", "HTML-like syntax in JavaScript", "A CSS framework", "A testing tool"],
+            "answer": "HTML-like syntax in JavaScript"
+          }
+        ],
+        "usestate": [
+          {
+            "question": "What does useState return?",
+            "options": ["A number", "A value and a setter function", "A string", "A boolean"],
+            "answer": "A value and a setter function"
+          },
+          {
+            "question": "What happens when state changes?",
+            "options": ["Nothing", "The page refreshes", "The component re-renders", "An error occurs"],
+            "answer": "The component re-renders"
+          },
+          {
+            "question": "What is the initial value of useState(0)?",
+            "options": ["null", "undefined", "0", "false"],
+            "answer": "0"
+          },
+          {
+            "question": "How do you update state?",
+            "options": ["state = newValue", "setState(newValue)", "Using the setter function", "Using useEffect"],
+            "answer": "Using the setter function"
+          },
+          {
+            "question": "Where must hooks be called?",
+            "options": ["Anywhere", "Only in class components", "At the top level of a component", "Inside loops"],
+            "answer": "At the top level of a component"
+          }
+        ],
+        "useeffect": [
+          {
+            "question": "When does useEffect run by default?",
+            "options": ["Before render", "After every render", "Only once", "Never automatically"],
+            "answer": "After every render"
+          },
+          {
+            "question": "What is the dependency array in useEffect?",
+            "options": ["A list of functions", "Controls when the effect re-runs", "A list of imports", "Required for all effects"],
+            "answer": "Controls when the effect re-runs"
+          },
+          {
+            "question": "What does an empty dependency array [] mean?",
+            "options": ["Run every render", "Run only once on mount", "Never run", "Run on unmount"],
+            "answer": "Run only once on mount"
+          },
+          {
+            "question": "What is useEffect commonly used for?",
+            "options": ["Styling components", "Fetching data", "Creating variables", "Writing CSS"],
+            "answer": "Fetching data"
+          }
+        ]
+      },
+      "nextjs": {
+        "routing": [
+          {
+            "question": "How does Next.js create routes?",
+            "options": ["Manually in a config file", "Based on file structure", "Using React Router", "Using Express"],
+            "answer": "Based on file structure"
+          },
+          {
+            "question": "What file name creates a page in Next.js?",
+            "options": ["index.tsx", "page.tsx", "route.tsx", "main.tsx"],
+            "answer": "page.tsx"
+          },
+          {
+            "question": "What does [id] mean in a folder name?",
+            "options": ["A static route", "A dynamic route", "An API route", "A layout"],
+            "answer": "A dynamic route"
+          },
+          {
+            "question": "What is the difference between Next.js and React?",
+            "options": ["No difference", "Next.js adds routing, server-side rendering, and API routes", "React is faster", "Next.js replaces JavaScript"],
+            "answer": "Next.js adds routing, server-side rendering, and API routes"
+          },
+          {
+            "question": "What folder is used for API routes in Next.js?",
+            "options": ["pages/api", "app/api", "routes/", "server/"],
+            "answer": "app/api"
+          }
+        ]
+      }
+    },
+    "tools": {
+      "git": {
+        "basics": [
+          {
+            "question": "What does git add do?",
+            "options": ["Saves to GitHub", "Stages changes", "Creates a branch", "Deletes files"],
+            "answer": "Stages changes"
+          },
+          {
+            "question": "What does git commit do?",
+            "options": ["Pushes to GitHub", "Saves a snapshot locally", "Creates a repo", "Merges branches"],
+            "answer": "Saves a snapshot locally"
+          },
+          {
+            "question": "What does git push do?",
+            "options": ["Saves locally", "Stages files", "Sends to GitHub", "Creates a branch"],
+            "answer": "Sends to GitHub"
+          },
+          {
+            "question": "What does git status show?",
+            "options": ["Server status", "Changed files", "Branch history", "Commit count"],
+            "answer": "Changed files"
+          },
+          {
+            "question": "What command creates a new branch?",
+            "options": ["git branch new", "git checkout -b branchname", "git new branch", "git create branch"],
+            "answer": "git checkout -b branchname"
+          },
+          {
+            "question": "What is a good commit message prefix for a new feature?",
+            "options": ["update:", "feat:", "new:", "add:"],
+            "answer": "feat:"
+          }
+        ]
+      },
+      "terminal": {
+        "basic-commands": [
+          {
+            "question": "What does pwd show?",
+            "options": ["Files in folder", "Current directory path", "Running processes", "Disk space"],
+            "answer": "Current directory path"
+          },
+          {
+            "question": "What does ls do?",
+            "options": ["Lists files", "Creates files", "Deletes files", "Moves files"],
+            "answer": "Lists files"
+          },
+          {
+            "question": "What does mkdir do?",
+            "options": ["Moves a directory", "Makes a directory", "Deletes a directory", "Lists directories"],
+            "answer": "Makes a directory"
+          },
+          {
+            "question": "What does cd .. do?",
+            "options": ["Goes into a folder", "Goes back one level", "Deletes a folder", "Creates a folder"],
+            "answer": "Goes back one level"
+          },
+          {
+            "question": "What does rm -rf do?",
+            "options": ["Renames a file", "Force deletes a folder and everything inside", "Restores a file", "Reads a file"],
+            "answer": "Force deletes a folder and everything inside"
+          },
+          {
+            "question": "What does cat do?",
+            "options": ["Creates a file", "Reads and prints file contents", "Copies a file", "Compresses a file"],
+            "answer": "Reads and prints file contents"
+          }
+        ]
+      }
+    },
+    "ai-apis": {
+      "rest-apis": {
+        "http-methods": [
+          {
+            "question": "Which method fetches data?",
+            "options": ["POST", "DELETE", "GET", "PUT"],
+            "answer": "GET"
+          },
+          {
+            "question": "Which method creates new data?",
+            "options": ["GET", "POST", "DELETE", "PATCH"],
+            "answer": "POST"
+          },
+          {
+            "question": "Which method removes data?",
+            "options": ["GET", "POST", "PUT", "DELETE"],
+            "answer": "DELETE"
+          },
+          {
+            "question": "Which method updates existing data?",
+            "options": ["GET", "POST", "PUT", "FETCH"],
+            "answer": "PUT"
+          },
+          {
+            "question": "What status code means success?",
+            "options": ["404", "500", "200", "301"],
+            "answer": "200"
+          },
+          {
+            "question": "What status code means not found?",
+            "options": ["200", "401", "404", "500"],
+            "answer": "404"
+          },
+          {
+            "question": "What status code means unauthorized?",
+            "options": ["200", "401", "404", "500"],
+            "answer": "401"
+          },
+          {
+            "question": "What status code means server error?",
+            "options": ["200", "401", "404", "500"],
+            "answer": "500"
+          }
+        ]
+      },
+      "jwt-auth": {
+        "how-jwt-works": [
+          {
+            "question": "What does JWT stand for?",
+            "options": ["Java Web Tool", "JSON Web Token", "JavaScript Web Type", "Joint Web Transfer"],
+            "answer": "JSON Web Token"
+          },
+          {
+            "question": "When is a JWT created?",
+            "options": ["On page load", "When user logs in", "On every click", "When page refreshes"],
+            "answer": "When user logs in"
+          },
+          {
+            "question": "What happens if a JWT is invalid?",
+            "options": ["User is logged in anyway", "Server returns 401 Unauthorized", "Token refreshes automatically", "Nothing happens"],
+            "answer": "Server returns 401 Unauthorized"
+          },
+          {
+            "question": "How many parts does a JWT have?",
+            "options": ["1", "2", "3", "4"],
+            "answer": "3"
+          },
+          {
+            "question": "Where is the JWT sent in a request?",
+            "options": ["In the URL", "In the body", "In the Authorization header", "In a cookie always"],
+            "answer": "In the Authorization header"
+          },
+          {
+            "question": "What are the three parts of a JWT?",
+            "options": ["Header, Body, Footer", "Header, Payload, Signature", "Key, Value, Token", "ID, Data, Hash"],
+            "answer": "Header, Payload, Signature"
+          }
+        ]
+      }
+    },
+    "concepts": {
+      "algorithms": {
+        "sliding-window": [
+          {
+            "question": "What problem does Sliding Window solve?",
+            "options": ["Sorting arrays", "Finding subarrays efficiently without nested loops", "Searching for an item", "Reversing a string"],
+            "answer": "Finding subarrays efficiently without nested loops"
+          },
+          {
+            "question": "What does the window slide over?",
+            "options": ["A tree", "An array or string", "A database", "A component"],
+            "answer": "An array or string"
+          },
+          {
+            "question": "What makes Sliding Window efficient?",
+            "options": ["It uses recursion", "It avoids nested loops", "It uses binary search", "It sorts first"],
+            "answer": "It avoids nested loops"
+          },
+          {
+            "question": "In a sliding window, what happens when you move the window?",
+            "options": ["You recalculate everything", "You add the new item and remove the old item", "You sort again", "You start over"],
+            "answer": "You add the new item and remove the old item"
+          }
+        ],
+        "two-pointers": [
+          {
+            "question": "What is the Two Pointers technique?",
+            "options": ["Using two arrays", "Two variables moving through data", "Two loops nested", "Two functions"],
+            "answer": "Two variables moving through data"
+          },
+          {
+            "question": "When is Two Pointers most useful?",
+            "options": ["Unsorted arrays", "Sorted arrays", "Trees", "Graphs"],
+            "answer": "Sorted arrays"
+          },
+          {
+            "question": "What does Two Pointers replace?",
+            "options": ["Recursion", "Nested loops", "Binary search", "Hash maps"],
+            "answer": "Nested loops"
+          },
+          {
+            "question": "In a typical Two Pointers setup, where do the pointers start?",
+            "options": ["Both at index 0", "One at start, one at end", "Both at the middle", "Random positions"],
+            "answer": "One at start, one at end"
+          }
+        ],
+        "hash-maps": [
+          {
+            "question": "What is a Hash Map in JavaScript?",
+            "options": ["An array", "A plain object used for key-value storage", "A class", "A loop"],
+            "answer": "A plain object used for key-value storage"
+          },
+          {
+            "question": "What is the time complexity of looking up a value in a Hash Map?",
+            "options": ["O(n)", "O(log n)", "O(1)", "O(n²)"],
+            "answer": "O(1)"
+          },
+          {
+            "question": "What TypeScript type is used for a Hash Map?",
+            "options": ["Map<string>", "Record<string, number>", "Object<string>", "Hash<string>"],
+            "answer": "Record<string, number>"
+          },
+          {
+            "question": "What is Hash Maps best used for?",
+            "options": ["Sorting", "Counting and grouping data", "Reversing arrays", "Finding the minimum"],
+            "answer": "Counting and grouping data"
+          }
+        ]
+      }
+    },
+    "database": {
+      "postgresql": {
+        "basics": [
+          {
+            "question": "What command retrieves data from a table?",
+            "options": ["GET", "FETCH", "SELECT", "READ"],
+            "answer": "SELECT"
+          },
+          {
+            "question": "What command adds new data to a table?",
+            "options": ["ADD", "INSERT", "CREATE", "PUT"],
+            "answer": "INSERT"
+          },
+          {
+            "question": "What command modifies existing data?",
+            "options": ["MODIFY", "CHANGE", "UPDATE", "EDIT"],
+            "answer": "UPDATE"
+          },
+          {
+            "question": "What command removes data from a table?",
+            "options": ["REMOVE", "DROP", "DELETE", "CLEAR"],
+            "answer": "DELETE"
+          },
+          {
+            "question": "What clause filters results in a SELECT query?",
+            "options": ["FILTER", "WHERE", "HAVING", "LIMIT"],
+            "answer": "WHERE"
+          },
+          {
+            "question": "What does JOIN do in SQL?",
+            "options": ["Adds a new table", "Combines data from multiple tables", "Sorts data", "Groups data"],
+            "answer": "Combines data from multiple tables"
+          },
+          {
+            "question": "What is a PRIMARY KEY?",
+            "options": ["The most important column", "A unique identifier for each row", "The first column", "A foreign reference"],
+            "answer": "A unique identifier for each row"
+          },
+          {
+            "question": "What does SERIAL do in PostgreSQL?",
+            "options": ["Creates a string column", "Auto-increments an integer", "Creates a date column", "Sets a default value"],
+            "answer": "Auto-increments an integer"
+          }
+        ]
+      }
+    }
+  }
+}
