@@ -45,7 +45,12 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000)
 
+## Sources 
+
+Background: https://imgur.com/a/over-50-frutiger-aero-wallpapers-2008ify-pc-py02bp7
+
 ## Author
 
 Daniel Tzul — Full Stack Developer
 [github.com/Dtzul04](https://github.com/Dtzul04)
+
