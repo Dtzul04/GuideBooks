@@ -12,12 +12,22 @@ export default async function TopicPage({
 
   return (
     <main>
-      <Link href={`/category/${id}`}>Back</Link>
-      <h1>{topic?.title}</h1>
-      <ul>
+      <Link
+        href={`/category/${id}`}
+        className="mb-3 inline-block text-slate-700 underline hover:text-slate-900"
+      >
+        Back
+      </Link>
+      <h1 className="mb-6 text-3xl font-bold text-slate-900 md:text-4xl">
+        {topic?.title}
+      </h1>
+      <ul className="space-y-3">
         {topic?.lessons.map((lesson) => (
           <li key={lesson.id}>
-            <Link href={`/category/${id}/${topicId}/${lesson.id}`}>
+            <Link
+              href={`/category/${id}/${topicId}/${lesson.id}`}
+              className="block rounded-2xl bg-white/50 p-4 font-semibold text-slate-900 shadow-md transition hover:bg-white/80"
+            >
               {lesson.title}
             </Link>
           </li>

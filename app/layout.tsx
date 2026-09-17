@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Quiz from "@/components/Quiz";
 import Roadmap from "@/components/Roadmap";
+import Quiz from "@/components/Quiz";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,15 +27,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-screen bg-[url('/images/background.jpeg')] bg-cover bg-center bg-fixed p-6 text-slate-800">
         <div className="flex flex-col gap-6 md:flex-row">
-          <div className="flex-1 rounded-3xl bg-white/70 p-6 shadow-lg">
+          <div className="h-[70vh] flex-1 overflow-y-auto rounded-3xl bg-white/70 p-6 shadow-lg">
             {children}
           </div>
-          <aside className="md:w-96 rounded-3xl bg-white/70 p-6 shadow-lg">
-            <Quiz categoryId="languages" topicId="javascript" />
+          <aside className="h-[70vh] overflow-y-auto rounded-3xl bg-white/70 p-6 shadow-lg md:w-96">
+            <Quiz />
           </aside>
         </div>
 
-        <div className="mt-6 rounded-3xl bg-white/70 p-6 shadow-lg">
+        <div className="mt-6 h-72 overflow-y-auto rounded-3xl bg-white/70 p-6 shadow-lg">
           <Roadmap />
         </div>
       </body>

@@ -15,7 +15,12 @@ export default async function LessonPage({
   if (!lesson) {
     return (
       <main>
-        <Link href={`/category/${id}/${topicId}`}>Back</Link>
+        <Link
+          href={`/category/${id}/${topicId}`}
+          className="mb-3 inline-block text-slate-700 underline hover:text-slate-900"
+        >
+          Back
+        </Link>
         <p>Lesson not found</p>
       </main>
     );
@@ -23,8 +28,15 @@ export default async function LessonPage({
 
   return (
     <main>
-      <Link href={`/category/${id}/${topicId}`}>Back</Link>
-      <h1>{lesson.title}</h1>
+      <Link
+        href={`/category/${id}/${topicId}`}
+        className="mb-3 inline-block text-slate-700 underline hover:text-slate-900"
+      >
+        Back
+      </Link>
+      <h1 className="mb-6 text-3xl font-bold text-slate-900 md:text-4xl">
+        {lesson.title}
+      </h1>
       <TopicContent
         title={lesson.title}
         summary={lesson.summary}
