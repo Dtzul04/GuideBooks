@@ -6,7 +6,7 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwindcss&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Deploy-Vercel-000000?style=flat&logo=vercel&logoColor=white)
 
-**Live demo:** coming soon
+**Live demo:** [https://guide-books.vercel.app/](https://guide-books.vercel.app/)
 
 A developer reference tool to sharpen your coding knowledge — built for new and experienced developers alike.
 
