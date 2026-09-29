@@ -10,10 +10,10 @@ type Question = {
 };
 
 const pickBtn =
-  "block w-full mb-2 rounded-2xl bg-white/50 p-3 text-left font-semibold text-slate-900 shadow-md hover:bg-white/80 transition";
+  "block w-full mb-2 p-3 rounded-2xl text-left font-semibold text-slate-900 bg-white/40 backdrop-blur-md border border-white/60 shadow-sm hover:shadow-lg";
 
 const backBtn =
-  "mb-3 rounded-full bg-white/50 px-4 py-2 text-sm font-semibold text-slate-900 shadow-md hover:bg-white/80";
+  "mb-3 px-4 py-2 p-3 text-sm rounded-full bg-white/40 text-slate-900 backdrop-blur-md border border-white/60 shadow-sm hover:shadow-lg";
 
 function shuffleOptions(options: string[]) {
   const shuffled = [...options];
