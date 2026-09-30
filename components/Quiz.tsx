@@ -10,11 +10,12 @@ type Question = {
 };
 
 const pickBtn =
-  "block w-full mb-2 p-3 rounded-2xl text-left font-semibold text-slate-900 bg-white/40 backdrop-blur-md border border-white/60 shadow-sm hover:shadow-lg";
+  "block w-full mb-2 p-3 rounded-xl text-left font-semibold text-slate-900 bg-white/40 backdrop-blur-md border border-white/60 shadow-sm hover:bg-white/60 hover:shadow-lg transition duration-300 cursor-pointer";
 
 const backBtn =
-  "mb-3 px-4 py-2 p-3 text-sm rounded-full bg-white/40 text-slate-900 backdrop-blur-md border border-white/60 shadow-sm hover:shadow-lg";
+  "mb-3 px-4 py-2 text-sm font-semibold rounded-full bg-white/40 text-slate-900 backdrop-blur-md border border-white/60 shadow-sm hover:bg-white/60 hover:shadow-lg transition duration-300 cursor-pointer";
 
+// Returns the options in random order so the right answer isn't always in the same spot
 function shuffleOptions(options: string[]) {
   const shuffled = [...options];
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -24,6 +25,7 @@ function shuffleOptions(options: string[]) {
   return shuffled;
 }
 
+// Step-by-step quiz: pick a category, then a topic, then a lesson, then answer its questions
 export default function Quiz() {
   const [categoryId, setCategoryId] = useState<string | null>(null);
   const [topicId, setTopicId] = useState<string | null>(null);
@@ -43,6 +45,7 @@ export default function Quiz() {
       ? Object.keys(quiz[categoryId]?.[topicId] ?? {})
       : [];
 
+  // Opens a lesson: loads its questions, shuffles each one's options, and clears old answers
   function openLesson(id: string) {
     if (!categoryId || !topicId) return;
     const raw = quiz[categoryId]?.[topicId]?.[id] ?? [];
@@ -56,11 +59,14 @@ export default function Quiz() {
     setSelectedAnswers({});
   }
 
+  // Saves the chosen option for a question; once answered, it can't be changed
   function pickAnswer(questionIndex: number, option: string) {
     if (selectedAnswers[questionIndex]) return;
     setSelectedAnswers((prev) => ({ ...prev, [questionIndex]: option }));
   }
 
+  // Picks the style for an option: normal before answering, then green if correct,
+  // red if it was the wrong pick, and faded for the rest
   function optionClass(
     questionIndex: number,
     option: string,
@@ -78,6 +84,7 @@ export default function Quiz() {
     return `${pickBtn} opacity-50`;
   }
 
+  // Goes back one step: questions -> lessons -> topics -> categories
   function goBack() {
     if (lessonId) {
       setLessonId(null);
@@ -90,7 +97,7 @@ export default function Quiz() {
     }
   }
 
-  // Questions
+  // A lesson is open, so show its questions
   if (categoryId && topicId && lessonId) {
     return (
       <section>
@@ -120,7 +127,7 @@ export default function Quiz() {
     );
   }
 
-  // Pick lesson
+  // A topic is chosen, so list its lessons
   if (categoryId && topicId) {
     return (
       <section>
@@ -143,7 +150,7 @@ export default function Quiz() {
     );
   }
 
-  // Pick topic
+  // A category is chosen, so list its topics
   if (categoryId) {
     return (
       <section>
@@ -166,7 +173,7 @@ export default function Quiz() {
     );
   }
 
-  // Pick category
+  // Nothing chosen yet, so list the categories
   return (
     <section>
       <h2 className="mb-3 text-2xl font-bold text-slate-900">Quiz</h2>
