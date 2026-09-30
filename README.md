@@ -5,6 +5,7 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwindcss&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Deploy-Vercel-000000?style=flat&logo=vercel&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat)
 
 **Live demo:** [https://guide-books.vercel.app/](https://guide-books.vercel.app/)
 
@@ -48,6 +49,10 @@ Open [http://localhost:3000](http://localhost:3000)
 ## Sources
 
 Background: https://imgur.com/a/over-50-frutiger-aero-wallpapers-2008ify-pc-py02bp7
+
+## License
+
+This project is licensed under the [MIT License](LICENSE). The background image is third-party and not covered by this license (see Sources).
 
 ## Author
 

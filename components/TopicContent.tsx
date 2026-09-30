@@ -1,9 +1,11 @@
+// summary and example are optional because some lessons don't have them yet
 type TopicContentProps = {
   title: string;
   summary?: string;
   example?: string;
 };
 
+// The body of a lesson page: title, a short explanation, and a code example
 export default function TopicContent({
   title,
   summary,
