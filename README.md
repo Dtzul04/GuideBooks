@@ -12,10 +12,11 @@
 
 A developer reference tool to sharpen your coding knowledge — built for new and experienced developers alike.
 
-Browse concepts, quiz yourself, and follow a learning roadmap across modern web development.
+Browse concepts, search topics and lessons, quiz yourself, and follow a learning roadmap across modern web development.
 
 ## Features
 
+- **Search** — Find topics and lessons by name on the home page; results update as you type and link into the same category routes
 - **Reference Library** — Browse categories and topics with summaries and code examples
 - **Quick Quiz** — Pick a category, topic, and lesson; shuffled options with green/red feedback
 - **Roadmap** — Frontend, Backend, and Full Stack learning paths
