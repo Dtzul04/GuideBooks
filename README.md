@@ -46,8 +46,19 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000)
 
+## Before you open a PR
+
+Run these locally:
+
+```bash
+npm run lint
+npm test
+npm run build
+```
+
 ## Sources
 
+Learning content: Summaries and examples were written for this project with help from [W3Schools](https://www.w3schools.com/) and official docs where noted.
 Background: https://imgur.com/a/over-50-frutiger-aero-wallpapers-2008ify-pc-py02bp7
 
 ## License
