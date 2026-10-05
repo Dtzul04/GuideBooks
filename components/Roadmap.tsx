@@ -35,20 +35,23 @@ export default function Roadmap() {
       {selected && (
         <div className="mt-4 text-slate-800">
           <p>{selected.description}</p>
-          <div className="grid grid-cols-1 md: grid-cols-3 gap-4">
-          {selected.stages.map((stage) => (
-            <div key={stage.title} className="rounded-2xl bg-white/40 p-4">
-              <h3 className="mb-2 text-lg font-bold">
-                {stage.level}: {stage.title}
-              </h3>
-              {/* Topics to learn in this stage */}
-              <ul className="list-disc space-y-1 pl-5">
-                {stage.topics.map((topic) => (
-                  <li key={topic.name}>{topic.name}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
+            {selected.stages.map((stage) => (
+              <div
+                key={stage.title}
+                className="rounded-xl bg-white/40 p-4 backdrop-blur-md border border-white/60 shadow-sm"
+              >
+                <h3 className="mb-2 text-lg font-bold text-slate-900">
+                  {stage.level}: {stage.title}
+                </h3>
+                {/* Topics to learn in this stage */}
+                <ul className="list-disc space-y-1 pl-5">
+                  {stage.topics.map((topic) => (
+                    <li key={topic.name}>{topic.name}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       )}
