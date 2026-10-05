@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import quizData from "@/data/quiz.json";
+import content from "@/data/content.json";
 
 type Question = {
   question: string;
@@ -23,6 +24,24 @@ function shuffleOptions(options: string[]) {
     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
   }
   return shuffled;
+}
+
+// Turns an id like "html-css" into "Html Css" when there's no matching title
+function formatId(id: string) {
+  return id
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+// Shows the real title from content.json (e.g. "JavaScript"), or a formatted id
+function getTitle(categoryId: string, topicId?: string, lessonId?: string) {
+  const category = content.find((c) => c.id === categoryId);
+  const topic = topicId ? category?.topics.find((t) => t.id === topicId) : undefined;
+  const lesson = lessonId ? topic?.lessons.find((l) => l.id === lessonId) : undefined;
+
+  const match = lessonId ? lesson : topicId ? topic : category;
+  return match?.title ?? formatId(lessonId ?? topicId ?? categoryId);
 }
 
 // Step-by-step quiz: pick a category, then a topic, then a lesson, then answer its questions
@@ -105,7 +124,9 @@ export default function Quiz() {
         <button className={backBtn} type="button" onClick={goBack}>
           Back
         </button>
-        <p className="mb-3 font-semibold text-slate-700">{lessonId}</p>
+        <p className="mb-3 font-semibold text-slate-700">
+          {getTitle(categoryId, topicId, lessonId)}
+        </p>
 
         {questions.map((q, questionIndex) => (
           <div key={q.question} className="mb-4">
@@ -143,7 +164,7 @@ export default function Quiz() {
             type="button"
             onClick={() => openLesson(id)}
           >
-            {id}
+            {getTitle(categoryId, topicId, id)}
           </button>
         ))}
       </section>
@@ -166,7 +187,7 @@ export default function Quiz() {
             type="button"
             onClick={() => setTopicId(id)}
           >
-            {id}
+            {getTitle(categoryId, id)}
           </button>
         ))}
       </section>
@@ -185,7 +206,7 @@ export default function Quiz() {
           type="button"
           onClick={() => setCategoryId(id)}
         >
-          {id}
+          {getTitle(id)}
         </button>
       ))}
     </section>
