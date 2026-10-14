@@ -1,6 +1,5 @@
 import Link from "next/link";
 import content from "@/data/content.json";
-import TopicContent from "@/components/TopicContent";
 
 // Shows one lesson's summary and code example
 export default async function LessonPage({
@@ -41,12 +40,14 @@ export default async function LessonPage({
       <h1 className="mb-6 text-3xl font-bold text-slate-900 md:text-4xl">
         {lesson.title}
       </h1>
-      {/* Lesson body: summary and code example */}
-      <TopicContent
-        title={lesson.title}
-        summary={lesson.summary}
-        example={lesson.example}
-      />
+      <section className="space-y-4">
+        <p className="whitespace-pre-line leading-relaxed text-slate-700">
+          {lesson.summary ?? "Summary coming soon."}
+        </p>
+        <pre className="overflow-x-auto rounded-2xl bg-slate-900/90 p-4 text-sm text-sky-100 shadow-md">
+          {lesson.example ?? "Example coming soon."}
+        </pre>
+      </section>
     </main>
   );
 }
