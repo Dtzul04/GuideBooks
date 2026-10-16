@@ -1,3 +1,4 @@
+// Checks that content.json has valid categories, topics, and lessons (no missing or duplicate ids).s
 import { describe, it, expect } from "vitest";
 import content from "./content.json";
 
