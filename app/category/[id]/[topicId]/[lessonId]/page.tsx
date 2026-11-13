@@ -1,5 +1,6 @@
 import Link from "next/link";
 import content from "@/data/content.json";
+import CodeBlock from "@/components/CodeBlock";
 
 // Shows one lesson's summary and code example
 export default async function LessonPage({
@@ -44,9 +45,8 @@ export default async function LessonPage({
         <p className="whitespace-pre-line leading-relaxed text-slate-700">
           {lesson.summary ?? "Summary coming soon."}
         </p>
-        <pre className="overflow-x-auto rounded-2xl bg-slate-900/90 p-4 text-sm text-sky-100 shadow-md">
-          {lesson.example ?? "Example coming soon."}
-        </pre>
+        <CodeBlock code={lesson.example ?? "Example coming soon."} />
+
       </section>
     </main>
   );
