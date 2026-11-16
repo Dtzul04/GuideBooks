@@ -32,27 +32,27 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} text-[13px] h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-screen bg-[url('/images/background.jpeg')] bg-cover bg-center bg-fixed p-6 text-slate-800">
-      <div className="max-w-6xl mx-auto">
+      <body className="min-h-screen bg-[url('/images/background.jpeg')] bg-cover bg-center bg-fixed p-4 text-base text-slate-800 md:p-6">
+        <div className="mx-auto max-w-6xl">
           {/* Page content and Quiz, stacked on phones and side by side on wider screens */}
-          <div className="flex flex-col gap-6 md:flex-row ">
+          <div className="flex flex-col gap-4 md:flex-row md:gap-6">
             {/* Shows whichever page matches the URL (home, category, topic, lesson) */}
-            <div className="h-[50vh] flex-1 overflow-y-auto rounded-3xl bg-white/70 p-6 shadow-lg">
+            <div className="h-[55vh] flex-1 overflow-y-auto rounded-3xl border border-white/70 bg-[var(--panel)] p-5 shadow-lg backdrop-blur-md md:h-[50vh] md:p-6">
               {children}
             </div>
-            <aside className="h-[50vh] overflow-y-auto rounded-3xl bg-white/70 p-6 shadow-lg md:w-96">
+            <aside className="h-[45vh] overflow-y-auto rounded-3xl border border-white/70 bg-[var(--panel)] p-5 shadow-lg backdrop-blur-md md:h-[50vh] md:w-96 md:p-6">
               <Quiz />
             </aside>
           </div>
 
           {/* Career roadmaps */}
-          <div className="mt-6 h-[45vh] overflow-y-auto rounded-3xl bg-white/70 p-6 shadow-lg">
+          <div className="mt-4 h-[45vh] overflow-y-auto rounded-3xl border border-white/70 bg-[var(--panel)] p-5 shadow-lg backdrop-blur-md md:mt-6 md:p-6">
             <Roadmap />
           </div>
         </div>
-        </body>
+      </body>
     </html>
   );
 }

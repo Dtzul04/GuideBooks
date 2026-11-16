@@ -20,7 +20,7 @@ export default async function LessonPage({
       <main>
         <Link
           href={`/category/${id}/${topicId}`}
-          className="mb-3 inline-block text-slate-700 underline hover:text-slate-900"
+          className="mb-3 inline-block text-sm font-medium text-sky-700 underline-offset-2 hover:text-sky-900 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
         >
           Back
         </Link>
@@ -34,15 +34,15 @@ export default async function LessonPage({
       {/* Back to the topic's lesson list */}
       <Link
         href={`/category/${id}/${topicId}`}
-        className="mb-3 inline-block text-slate-700 underline hover:text-slate-900"
+        className="mb-3 inline-block text-sm font-medium text-sky-700 underline-offset-2 hover:text-sky-900 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
       >
         Back
       </Link>
-      <h1 className="mb-6 text-3xl font-bold text-slate-900 md:text-4xl">
+      <h1 className="mb-6 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
         {lesson.title}
       </h1>
       <section className="space-y-4">
-        <p className="whitespace-pre-line leading-relaxed text-slate-700">
+        <p className="whitespace-pre-line text-base leading-relaxed text-slate-700">
           {lesson.summary ?? "Summary coming soon."}
         </p>
         <CodeBlock code={lesson.example ?? "Example coming soon."} />

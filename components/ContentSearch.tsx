@@ -16,7 +16,7 @@ export default function ContentSearch() {
     <section className="mb-6" aria-label="Search learning content">
       <label
         htmlFor="content-search"
-        className="mb-2 block font-semibold text-slate-900"
+        className="mb-2 block text-sm font-medium text-slate-600"
       >
         Search topics and lessons
       </label>
@@ -24,7 +24,7 @@ export default function ContentSearch() {
         id="content-search"
         type="search"
         placeholder="e.g. async, git, react…"
-        className="w-full rounded-xl border border-white/60 bg-white/40 px-4 py-3 text-slate-900 shadow-sm backdrop-blur-md placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-400"
+        className="w-full rounded-xl border border-slate-200/70 bg-[var(--surface)] px-4 py-3 text-slate-900 shadow-sm backdrop-blur-md placeholder:text-slate-500 transition duration-200 hover:border-sky-300 focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-500"
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
       />
