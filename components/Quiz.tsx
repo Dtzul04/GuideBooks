@@ -11,10 +11,10 @@ type Question = {
 };
 
 const pickBtn =
-  "block w-full mb-2 p-3 rounded-xl text-left font-semibold text-slate-900 bg-white/40 backdrop-blur-md border border-white/60 shadow-sm hover:bg-white/60 hover:shadow-lg transition duration-300 cursor-pointer";
+  "mb-2 block w-full cursor-pointer rounded-xl border border-slate-200/70 bg-[var(--surface)] p-3 text-left font-semibold text-slate-900 shadow-sm backdrop-blur-md transition duration-200 hover:border-sky-300 hover:bg-[var(--surface-hover)] hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed";
 
 const backBtn =
-  "mb-3 px-4 py-2 text-sm font-semibold rounded-full bg-white/40 text-slate-900 backdrop-blur-md border border-white/60 shadow-sm hover:bg-white/60 hover:shadow-lg transition duration-300 cursor-pointer";
+  "mb-3 cursor-pointer rounded-xl border border-slate-200/70 bg-[var(--surface)] px-4 py-2 text-sm font-semibold text-slate-900 shadow-sm backdrop-blur-md transition duration-200 hover:border-sky-300 hover:bg-[var(--surface-hover)] hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2";
 
 // Returns the options in random order so the right answer isn't always in the same spot
 function shuffleOptions(options: string[]) {
@@ -120,11 +120,11 @@ export default function Quiz() {
   if (categoryId && topicId && lessonId) {
     return (
       <section>
-        <h2 className="mb-3 text-2xl font-bold text-slate-900">Quiz</h2>
+        <h2 className="mb-1 text-2xl font-bold tracking-tight text-slate-900">Quiz</h2>
         <button className={backBtn} type="button" onClick={goBack}>
           Back
         </button>
-        <p className="mb-3 font-semibold text-slate-700">
+        <p className="mb-3 text-sm font-medium text-slate-600">
           {getTitle(categoryId, topicId, lessonId)}
         </p>
 
@@ -152,11 +152,11 @@ export default function Quiz() {
   if (categoryId && topicId) {
     return (
       <section>
-        <h2 className="mb-3 text-2xl font-bold text-slate-900">Quiz</h2>
+        <h2 className="mb-1 text-2xl font-bold tracking-tight text-slate-900">Quiz</h2>
         <button className={backBtn} type="button" onClick={goBack}>
           Back
         </button>
-        <p className="mb-3 text-slate-700">Pick a lesson:</p>
+        <p className="mb-3 text-sm text-slate-600">Pick a lesson:</p>
         {lessonIds.map((id) => (
           <button
             className={pickBtn}
@@ -175,11 +175,11 @@ export default function Quiz() {
   if (categoryId) {
     return (
       <section>
-        <h2 className="mb-3 text-2xl font-bold text-slate-900">Quiz</h2>
+        <h2 className="mb-1 text-2xl font-bold tracking-tight text-slate-900">Quiz</h2>
         <button className={backBtn} type="button" onClick={goBack}>
           Back
         </button>
-        <p className="mb-3 text-slate-700">Pick a topic:</p>
+        <p className="mb-3 text-sm text-slate-600">Pick a topic:</p>
         {topicIds.map((id) => (
           <button
             className={pickBtn}
@@ -197,8 +197,8 @@ export default function Quiz() {
   // Nothing chosen yet, so list the categories
   return (
     <section>
-      <h2 className="mb-3 text-2xl font-bold text-slate-900">Quiz</h2>
-      <p className="mb-3 text-slate-700">Pick a category:</p>
+      <h2 className="mb-1 text-2xl font-bold tracking-tight text-slate-900">Quiz</h2>
+      <p className="mb-3 text-sm text-slate-600">Pick a category:</p>
       {categoryIds.map((id) => (
         <button
           className={pickBtn}

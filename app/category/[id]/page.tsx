@@ -17,7 +17,7 @@ export default async function CategoryPage({
       <main>
         <Link
           href="/"
-          className="mb-3 inline-block text-slate-700 underline hover:text-slate-900"
+          className="mb-3 inline-block text-sm font-medium text-sky-700 underline-offset-2 hover:text-sky-900 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
         >
           Back
         </Link>
@@ -31,11 +31,11 @@ export default async function CategoryPage({
       {/* Back to the home page */}
       <Link
         href="/"
-        className="mb-3 inline-block text-slate-700 underline hover:text-slate-900"
+        className="mb-3 inline-block text-sm font-medium text-sky-700 underline-offset-2 hover:text-sky-900 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
       >
         Back
       </Link>
-      <h1 className="mb-6 text-3xl font-bold text-slate-900 md:text-4xl">
+      <h1 className="mb-6 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
         {category.title}
       </h1>
       {/* One link per topic, going to /category/[id]/[topicId] */}
@@ -44,7 +44,7 @@ export default async function CategoryPage({
           <li key={topic.id}>
             <Link
               href={`/category/${id}/${topic.id}`}
-              className="block rounded-xl bg-white/40 backdrop-blur-md border border-white/60 p-4 font-semibold text-slate-900 shadow-sm hover:bg-white/60 hover:shadow-lg transition duration-300"
+              className="block rounded-xl border border-slate-200/70 bg-[var(--surface)] p-4 font-semibold text-slate-900 shadow-sm backdrop-blur-md transition duration-200 hover:border-sky-300 hover:bg-[var(--surface-hover)] hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
             >
               {topic.title}
             </Link>
